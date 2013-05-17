@@ -1,12 +1,11 @@
-<<<<<<< HEAD
-Starter WordPress theme
-=======
-wordpress-starter-theme
-=======================
+We Are Thought Fox 
 
 Begins of a theme using Sass, Inuit, Gridset and Grunt
 
-=======
-wearethoughtfox
-===============
->>>>>>> f2140f283b624b3c7cad50ab94f6beb54d1df5b6
+Gridset takes care of the grid. 
+
+Sass and Inuit inside the assets folder. 
+
+Grunt compiles js and css to build folder following this article - http://mondaybynoon.com/20130310/grunt-wordpress-theme-development/
+
+WordPress templates use a wrapper as in Roots and Scribu http://scribu.net/wordpress/theme-wrappers.html
