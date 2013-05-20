@@ -20,50 +20,20 @@
 
 	<footer class="entry-meta">	
 
+		Recent entries by <?php echo get_the_author(); ?>
+		<?php echo get_related_author_posts(); ?>
+
+
 		<nav class="next-previous">
 
-		<ul class="nav uppercase no-margin-below">
-
-			<li class="previous">
-
-				<?php 
-
-					$prev_post = get_previous_post(true);
-
-					if  (!empty( $prev_post )) {
-
-						previous_post_link('%link', 'Previous', TRUE);
-					}
-
-					else {
-
-						echo '<div class="no-link">Previous</div>';
-					}
-
-					?>
-
-			</li>
-
-			<li class="next"><?php 
-
-					$next_post = get_next_post(true);
-
-					if  (!empty( $next_post )) {
-
-						next_post_link('%link', 'Next', TRUE); 
-					}
-
-					else {
-
-						echo '<div class="no-link">Next</div>';
-					}
-
-					?>
-
-			</li>
-
-
-		 </ul>
+			<ul class="nav">
+		
+				<li><?php previous_post_link('Before this: %link', ' %title', TRUE); ?>
+				</li>
+				<li>
+				<?php next_post_link('After this: %link', ' %title', TRUE); ?>
+				</li>
+			</ul>	
 
 	</nav>
 

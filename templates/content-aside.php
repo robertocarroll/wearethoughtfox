@@ -4,14 +4,13 @@
  */
 ?>
 
-USING ASIDE
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php get_template_part('templates/entry-meta'); ?>		
+			<time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date('j F Y'); ?></time>
 
 			<?php $type = get_the_term_list( get_the_ID(), 'type') ?>	
 
@@ -82,12 +81,12 @@ USING ASIDE
 
 					if  (!empty( $prev_post )) {
 
-						previous_post_link('%link', 'Previous', TRUE);
+						previous_post_link('%link', 'Previous work', TRUE);
 					}
 
 					else {
 
-						echo '<div class="no-link">Previous</div>';
+						echo '<div class="no-link">Previous work</div>';
 					}
 
 					?>
@@ -100,12 +99,12 @@ USING ASIDE
 
 					if  (!empty( $next_post )) {
 
-						next_post_link('%link', 'Next', TRUE); 
+						next_post_link('%link', 'Next work', TRUE); 
 					}
 
 					else {
 
-						echo '<div class="no-link">Next</div>';
+						echo '<div class="no-link">Next work</div>';
 					}
 
 					?>
