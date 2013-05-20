@@ -3,6 +3,12 @@
 	add_theme_support( 'post-formats', array( 'aside', 'image' ) ); // Enable support for Post Types
 	add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
+	/**
+	 * Enable support for Post Types
+	 */
+	
+	add_theme_support( 'post-formats', array( 'aside', 'image' ) );
+
 /*
 | -------------------------------------------------------------------
 | Navigation / Menus
