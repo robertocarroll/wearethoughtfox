@@ -5,23 +5,28 @@ Template Name: Home Page
 */
 ?>
 
-<?php // **Loop 1** get the first sticky only 
+WORK STICKY
+<?php
+// Get IDs of sticky posts
+$sticky = get_option('sticky_posts');
+// first loop to display only my single, 
+// MOST RECENT sticky post
+$most_recent_sticky_post = new WP_Query( array( 
+    // Only sticky posts
+    'post__in' => $sticky, 
+    // Treat them as sticky posts
+    'ignore_sticky_posts' => 0, 
+    // Only from work category
+    'category_name'=> work,
+    // Order by ID
+    'orderby' => ID, 
+    // Get only the one most recent
+    'showposts' => 1
 
-			$sticky = get_option( 'sticky_posts' );
-
-			$featured_work_args = array(
-					'posts_per_page' => 1,
-					'category_name'=> work,
-			        'post__in' => $sticky, 
-			        'ignore_sticky_posts' => 1,
-			        'orderby' => date
-			);
-
-			$featured_work_query = new WP_Query($featured_work_args);
-
-				while ( $featured_work_query->have_posts() ) : $featured_work_query->the_post(); ?>
-
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+) );
+while ( $most_recent_sticky_post->have_posts() ) : $most_recent_sticky_post->the_post(); ?>
+    
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<h2 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h3>
 
@@ -29,32 +34,106 @@ Template Name: Home Page
 
 		</div>
 
-	<?php endwhile; wp_reset_postdata(); ?>
+<?php endwhile; wp_reset_query(); ?>
+
+WORK NON STICKY
+<?php
+// Get IDs of sticky posts
+$sticky = get_option('sticky_posts');
+// first loop to display only my single, 
+// MOST RECENT sticky post
+$most_recent_work_not_sticky = new WP_Query( array( 
+    // Only sticky posts
+    'post__not_in' => $sticky, 
+    // Treat them as sticky posts
+    'ignore_sticky_posts' => 0, 
+    // Only from work category
+    'category_name'=> work,
+    // Order by ID
+    'orderby' => ID, 
+    // Get only the one most recent
+    'showposts' => 4
+
+) );
+while ( $most_recent_work_not_sticky->have_posts() ) : $most_recent_work_not_sticky->the_post(); ?>
+    
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<h2 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h3>
+
+				<h1 class="gamma bold big-line"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>	
+
+		</div>
+
+<?php endwhile; wp_reset_query(); ?>
 
 
-<?php //**Loop 2** exclude the sticky from the Loop 1
 
-				$work_args = array(
-						'category_name'=> work,
-				        'posts_per_page' => 4,
-				        'ignore_sticky_posts' => 1,
-				        'post__not_in'  => get_option( 'sticky_posts' )
+BLOG STICKY
+<?php
+// Get IDs of sticky posts
+$sticky = get_option('sticky_posts');
+// first loop to display only my single, 
+// MOST RECENT sticky post
+$most_recent_sticky_post_blog = new WP_Query( array( 
+    // Only sticky posts
+    'post__in' => $sticky, 
+    // Treat them as sticky posts
+    'ignore_sticky_posts' => 0, 
+    // Only from work category
+    'category_name'=> blog,
+    // Order by ID
+    'orderby' => ID, 
+    // Get only the one most recent
+    'showposts' => 1
 
-				);
+) );
+while ( $most_recent_sticky_post_blog->have_posts() ) : $most_recent_sticky_post_blog->the_post(); ?>
+    
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					$work_query = new WP_Query($work_args);
+			<h2 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h3>
 
-				while ( $work_query->have_posts() ) : $work_query->the_post(); ?>
+				<h1 class="gamma bold big-line"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>	
 
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		</div>
 
-				<h2 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h3>
+<?php endwhile; wp_reset_query(); ?>
 
-					<h1 class="gamma bold big-line"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>	
+BLOG NON STICKY
+<?php
+// Get IDs of sticky posts
+$sticky = get_option('sticky_posts');
+// first loop to display only my single, 
+// MOST RECENT sticky post
+$most_recent_blog_not_sticky = new WP_Query( array( 
+    // Only sticky posts
+    'post__not_in' => $sticky, 
+    // Treat them as sticky posts
+    'ignore_sticky_posts' => 0, 
+    // Only from work category
+    'category_name'=> blog,
+    // Order by ID
+    'orderby' => ID, 
+    // Get only the one most recent
+    'showposts' => 4
 
-			</div>
+) );
+while ( $most_recent_blog_not_sticky->have_posts() ) : $most_recent_blog_not_sticky->the_post(); ?>
+    
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php endwhile; wp_reset_postdata(); ?>
+			<h2 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h3>
+
+				<h1 class="gamma bold big-line"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>	
+
+		</div>
+
+<?php endwhile; wp_reset_query(); ?>
+
+
+
+
 
 
 
