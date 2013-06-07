@@ -5,7 +5,7 @@
 
   <?php get_template_part('templates/header'); ?>
 
-  <div class="wrap container" role="document">
+  <div class="wrapper" role="document">
       
       <div class="main" role="main">
       
@@ -13,7 +13,7 @@
       
       </div><!-- /.main -->
     
-  </div><!-- /.wrap -->
+  </div><!-- /.wrapper -->
 
   <?php get_template_part('templates/footer'); ?>
 
