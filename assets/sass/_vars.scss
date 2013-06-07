@@ -62,14 +62,15 @@ $use-greybox:       false;
 /**
  * Base stuff
  */
-$base-font-size:    18px!default;
-$base-line-height:  26px!default;
+$base-font-size:    16px!default;
+$base-line-height:  24px!default;
 
 /**
  * Base font-family.
  */
 
 $base-font-family: jubilatlight, serif;
+
 
 
 
@@ -97,6 +98,9 @@ $watf-blue: #688390;
  $lowest-line-height: 28px;
  $mid-line-height: 38px;
  $big-line-height: $base-line-height;
+
+
+$quarter-spacing-unit: $base-line-height / 4;
 
 /**
  * Responsive sizes
