@@ -1,0 +1,33 @@
+
+/**
+ * Line heights
+ */
+
+.narrowest {
+	line-height: $lowest-line-height;
+} 
+
+.narrow {
+	line-height: $mid-line-height;
+} 
+
+
+/**
+ * Colours
+ */
+
+.red {
+	color: $watf-red;
+}
+
+.darkest-grey {
+	color: darken($watf-grey, 20%);
+}
+
+
+
+.wrapper {
+			margin: 0 auto;
+			width: 94%;
+			float: none;
+		}

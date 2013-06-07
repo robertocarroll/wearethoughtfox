@@ -1,0 +1,39 @@
+
+.banner {	
+	border-top: $half-spacing-unit $watf-red solid;
+}
+
+.splash {
+	background: lighten($watf-grey, 20%);
+	@include gs-span(wd, 1, 12);
+	text-align: center;	
+}
+
+.splash-inner {
+	@include gs-span(wd, 3, 10, (1, 12));
+}
+
+.nav-main {
+	background: none repeat scroll 0 0 $watf-red;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+.nav-main li {
+	padding-top: $quarter-spacing-unit;
+	padding-bottom: $quarter-spacing-unit;
+	padding-left: $half-spacing-unit;
+	width: gs-width(wd, 4, 4, false, true);
+}
+
+.nav-main li a {
+	color: #FFFFFF;
+	letter-spacing: 0.2em;
+    text-shadow: none;	
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+
