@@ -11,7 +11,37 @@
 	line-height: $mid-line-height;
 } 
 
+/**
+ * Below margins
+ */
 
+.least-margin {
+	margin-bottom: $quarter-spacing-unit;
+}
+
+.no-margin {
+	margin-bottom: 0;
+}
+
+.margin-below-half {
+	margin-bottom: $half-spacing-unit;
+}
+
+.margin-below {
+	margin-bottom: $base-spacing-unit;
+}
+
+.double-margin-below {
+	margin-bottom: 2*($base-spacing-unit);
+}
+
+.double-padding-below {
+	padding-bottom: 2*($base-spacing-unit);
+}
+
+.double-padding-above {
+	padding-top: 2*($base-spacing-unit);
+}
 /**
  * Colours
  */
@@ -24,7 +54,18 @@
 	color: darken($watf-grey, 20%);
 }
 
+/**
+ * Brings the grid in 
+ */
 
+.line {	
+	border-top: $quarter-spacing-unit $watf-red solid;
+	clear:both;
+}
+
+/**
+ * Brings the grid in 
+ */
 
 .wrapper {
 			margin: 0 auto;

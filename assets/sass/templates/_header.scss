@@ -3,6 +3,11 @@
 	border-top: $half-spacing-unit $watf-red solid;
 }
 
+.logo {	
+	padding-top: $base-spacing-unit;
+	padding-bottom: $half-spacing-unit;
+}
+
 .splash {
 	background: lighten($watf-grey, 20%);
 	@include gs-span(wd, 1, 12);
@@ -11,6 +16,7 @@
 
 .splash-inner {
 	@include gs-span(wd, 3, 10, (1, 12));
+	padding-bottom: $half-spacing-unit;
 }
 
 .nav-main {

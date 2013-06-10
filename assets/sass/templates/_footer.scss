@@ -1,3 +1,20 @@
+@import "photoshop-drop-shadow";
+
+.contact {
+	@include gs-span(wd, 4, 8);
+	text-align: center;	
+	background: white;
+	color: #688390;
+	padding: 8px;
+	@include photoshop-inner-shadow(46, 3px, 0, 4px, rgba(#000, 0.58));
+    line-height: $lowest-line-height;  
+}
+
+
 footer {
-	background: none repeat scroll 0 0 $watf-red;
+	background: $watf-red;
 }	
+
+.copyright {
+	clear:both;
+}

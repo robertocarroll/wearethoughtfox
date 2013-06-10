@@ -1,13 +1,18 @@
-<header class="banner" role="banner">
+<header role="banner">
 
+<?php if ( is_front_page() ) {?>
+<div class="banner">
  <div class="splash">
   <div class="splash-inner"> 
 
     <img alt="logo" class="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-with-person.png">
     
-        <h1 class="beta narrow darkest-grey"><span class="red">We Are Thought Fox</span> is an agency for digital culture.</br>We design media: websites, apps, videos, maps and more.</h1>             
+        <h1 class="beta narrow darkest-grey"><span class="red">We Are Thought Fox</span> is an agency for digital culture.<br>We design media: websites, apps, videos, maps and more.</h1>             
    </div>      
-</div>      
+</div>  
+</div>
+
+<?php } ?>    
 
     <nav class="nav-main" role="navigation">
       <?php
