@@ -3,22 +3,45 @@
  * @package wearethoughtfox
  */
 ?>
-
+<?php while (have_posts()) : the_post(); ?>
+<div class="wrapper">
+	<div class="article">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
-		<div class="entry-meta">
-			<time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date('j F Y'); ?></time>
+		<?php
+				$royal_slideshow = get_post_meta($post->ID, 'slideshow', true);
+				if ($royal_slideshow)
+				
+				{
+				
+			?>
 
+				<?php echo '<div class="exhibition-slideshow">' ?>
+
+					<?php echo get_new_royalslider($royal_slideshow); ?>
+
+				<?php echo '</div>' ?>
+
+				<?php } ?>
+
+		<div class="gamma"><?php the_excerpt(); ?></div>
+
+		<div class="entry-meta">
+			<time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date('Y'); ?></time>
+	
 			<?php $type = get_the_term_list( get_the_ID(), 'type') ?>	
 
-										<?php if ( $type ) { ?>	
-												
-													<?php echo '<li class="meta-link">Type of work: '.$type.'</li> '; ?>
-												
-												<?php } ?>	
+				<?php if ( $type ) { ?>	
+			<?php
+
+			echo '<ul class="nav">';
+				echo get_the_term_list( $post->ID, 'type', '<li>', '</li><li>', '</li>' );
+			echo '</ul>';
+		}
+			?>
 
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -27,7 +50,9 @@
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">	
+
+
+	<footer>	
 
 		<!-- Related posts - category blog and tagged with the project slug  -->
 
@@ -71,53 +96,20 @@
 
 		<nav class="next-previous">
 
-		<ul class="nav uppercase no-margin-below">
+			<ul class="nav">
+		
+				<li class="previous"><?php previous_post_link('%link', 'PREVIOUS WORK', TRUE); ?></li>
+				<li class="next"><?php next_post_link('%link', 'NEXT WORK', TRUE); ?></li>
+			</ul>	
 
-			<li class="previous">
-
-				<?php 
-
-					$prev_post = get_previous_post(true);
-
-					if  (!empty( $prev_post )) {
-
-						previous_post_link('%link', 'Previous work', TRUE);
-					}
-
-					else {
-
-						echo '<div class="no-link">Previous work</div>';
-					}
-
-					?>
-
-			</li>
-
-			<li class="next"><?php 
-
-					$next_post = get_next_post(true);
-
-					if  (!empty( $next_post )) {
-
-						next_post_link('%link', 'Next work', TRUE); 
-					}
-
-					else {
-
-						echo '<div class="no-link">Next work</div>';
-					}
-
-					?>
-
-			</li>
-
-
-		 </ul>
-
-	</nav>
+		</nav>
 
 
 
 		<?php edit_post_link( __( 'Edit', 'wearethoughtfox' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
+
+</div><!-- .article -->
+</div><!-- .wrapper -->
+<?php endwhile; ?>

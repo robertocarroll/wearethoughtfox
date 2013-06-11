@@ -15,7 +15,10 @@
 	/*  When the link is being clicked	 */
 	a:active { color: $watf-red;}
 	
-	p a { color: $watf-red; text-decoration: none; @include transition(color, 0.5s, ease-out); }
+	p a { 
+		color: $watf-red; text-decoration: none; @include transition(color, 0.5s, ease-out); 
+	    border-bottom: 1px solid $watf-red;
+	}
 
 	p a:hover, p a:focus {color: darken( $watf-red, 20% ); text-decoration: none;} 
 	
@@ -34,9 +37,11 @@
 
 	/*  Custom links */
 
+	.nav-main li.current-menu-item a, .nav-main li.current-page-ancestor a, .nav-main li.current-post-ancestor a {color: lighten( $watf-grey, 10% );}
+
 	.nav-main li a {color: white; text-decoration: none; @include transition(color, 0.5s, ease-out);}
 
-	.nav-main li a:hover, a:focus {color: lighten( $watf-grey, 20% ); text-decoration: none;} 
+	.nav-main li a:hover, .nav-main li a:focus {color: lighten( $watf-grey, 10% ); text-decoration: none;} 
 
 
 

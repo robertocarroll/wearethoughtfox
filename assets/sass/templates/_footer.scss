@@ -1,7 +1,7 @@
 @import "photoshop-drop-shadow";
 
-.contact {
-	@include gs-span(wd, 4, 8);
+.contact-us {
+	@include gs-span(wd, 4, 9);
 	text-align: center;	
 	background: white;
 	color: #688390;
@@ -11,8 +11,9 @@
 }
 
 
-footer {
+footer[role="contentinfo"] {
 	background: $watf-red;
+	clear:both;
 }	
 
 .copyright {

@@ -11,6 +11,14 @@
 	line-height: $mid-line-height;
 } 
 
+.inline {
+	float: left;
+}
+
+.centre {
+	text-align: center;
+}
+
 /**
  * Below margins
  */
@@ -31,6 +39,13 @@
 	margin-bottom: $base-spacing-unit;
 }
 
+.padding-below {
+	padding-bottom: $base-spacing-unit;
+}
+
+.double-margin-above {
+	margin-top: 2*($base-spacing-unit);
+}
 .double-margin-below {
 	margin-bottom: 2*($base-spacing-unit);
 }
@@ -50,12 +65,16 @@
 	color: $watf-red;
 }
 
+.white {
+	color: white;
+}
+
 .darkest-grey {
 	color: darken($watf-grey, 20%);
 }
 
 /**
- * Brings the grid in 
+ * Some lines 
  */
 
 .line {	

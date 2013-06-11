@@ -26,11 +26,17 @@
     clear: both;
 }
 
+.menu-main-navigation-container {
+	margin: auto;	
+	width: gs-width(wd, 3, 7, false, true);
+}
+
+
 .nav-main li {
 	padding-top: $quarter-spacing-unit;
 	padding-bottom: $quarter-spacing-unit;
-	padding-left: $half-spacing-unit;
-	width: gs-width(wd, 4, 4, false, true);
+	margin-right: $base-spacing-unit;
+
 }
 
 .nav-main li a {

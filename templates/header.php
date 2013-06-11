@@ -4,16 +4,19 @@
 <div class="banner">
  <div class="splash">
   <div class="splash-inner"> 
-
-    <img alt="logo" class="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-with-person.png">
-    
-        <h1 class="beta narrow darkest-grey"><span class="red">We Are Thought Fox</span> is an agency for digital culture.<br>We design media: websites, apps, videos, maps and more.</h1>             
+        <img alt="logo" class="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-with-person.png">
+        <?php 
+           // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home_top_1') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?>             
    </div>      
 </div>  
 </div>
 
 <?php } ?>    
-
+  
     <nav class="nav-main" role="navigation">
       <?php
         if (has_nav_menu('primary_navigation')) :

@@ -7,5 +7,6 @@
 	require_once locate_template('/lib/scripts.php');       // Scripts functions
 	require_once locate_template('/lib/taxonomies.php');    // Taxonomies functions
 	require_once locate_template('/lib/utils.php');         // Utility functions
+	require_once locate_template('/lib/widgets.php');         // Widget functions
 
 ?>
