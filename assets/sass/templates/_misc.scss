@@ -39,6 +39,14 @@
 	margin-bottom: $base-spacing-unit;
 }
 
+.margin-above {
+	margin-top: $base-spacing-unit;
+}
+
+.margin-above-half {
+	margin-top: $half-spacing-unit;
+}
+
 .padding-below {
 	padding-bottom: $base-spacing-unit;
 }
@@ -67,6 +75,10 @@
 
 .white {
 	color: white;
+}
+
+.blue {
+	color: $watf-blue;
 }
 
 .darkest-grey {

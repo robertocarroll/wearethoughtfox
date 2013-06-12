@@ -19,7 +19,7 @@
 				
 			?>
 
-				<?php echo '<div class="exhibition-slideshow">' ?>
+				<?php echo '<div class="work-slideshow double-padding-below">' ?>
 
 					<?php echo get_new_royalslider($royal_slideshow); ?>
 
@@ -30,14 +30,14 @@
 		<div class="gamma"><?php the_excerpt(); ?></div>
 
 		<div class="entry-meta">
-			<time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date('Y'); ?></time>
+			<time class="updated" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('Y'); ?></time>
 	
 			<?php $type = get_the_term_list( get_the_ID(), 'type') ?>	
 
 				<?php if ( $type ) { ?>	
 			<?php
 
-			echo '<ul class="nav">';
+			echo '<ul class="nav project-type">';
 				echo get_the_term_list( $post->ID, 'type', '<li>', '</li><li>', '</li>' );
 			echo '</ul>';
 		}
@@ -64,7 +64,7 @@
 			);
 			?>
 
-			<div class="related-artwork">
+			<div class="related-blogposts padding-below">
 			
 				<?php $work_query = new WP_Query( $work_posts ); ?>
 				
@@ -72,19 +72,18 @@
 				
 				<?php if( $work_query->have_posts() ) : ?>
 				
-				<h2 class="related-title">Blog posts about <?php the_title(); ?> </h2> 
-		
-				<div id="sort">
+				<h2 class="gamma">Blog posts about <span class="blue"><?php the_title(); ?></span></h2> 
 				
 				<?php while ( $work_query->have_posts() ) : $work_query->the_post(); ?>
 		
-					<h2 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h3>
+					 <div class="blog-post margin-below">
 
-					<h1 class="gamma bold big-line"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>	
+            		<h3 class="delta least-margin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
+                    <h4 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h4>
+
+            	</div><!-- /.blog-post -->
 				
 				<?php endwhile; ?>
-				
-				</div>
 				
 				<?php endif; ?>	
 				
@@ -94,9 +93,9 @@
 
 
 
-		<nav class="next-previous">
+		<nav class="next-previous line">
 
-			<ul class="nav">
+			<ul class="nav margin-above-half">
 		
 				<li class="previous"><?php previous_post_link('%link', 'PREVIOUS WORK', TRUE); ?></li>
 				<li class="next"><?php next_post_link('%link', 'NEXT WORK', TRUE); ?></li>
