@@ -1,0 +1,26 @@
+
+.about-us {
+	@extend .delta;
+	@include gs-span(wd, 3, 7);
+	@include gs-pad(wd, padfull);
+
+}
+
+.clients li, .services li {
+
+        &:after{
+            content:" • ";
+        }
+
+        &:last-child:after{
+            display:none;
+        }
+    }
+
+.clients {
+	
+}
+
+.services {
+	
+}

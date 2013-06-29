@@ -1,0 +1,17 @@
+.blog-list {
+	@include gs-span(wd, 4, 9);
+	
+}
+
+.blog-list .category-blog {
+	padding-bottom: 3*($base-spacing-unit);
+
+}
+
+.navigation {
+	padding-bottom: 2*($base-spacing-unit);
+}
+
+.next-posts {
+	padding-top: $base-spacing-unit;
+}

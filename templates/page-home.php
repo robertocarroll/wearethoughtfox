@@ -4,7 +4,7 @@ Template Name: Home Page
 */
 ?>
 
-<section>
+<section id="work">
 
     <div class="wrapper double-padding-below">
 
@@ -89,7 +89,7 @@ Template Name: Home Page
 <?php get_template_part('templates/lets-work'); ?> 
 
 
-<section class="line double-padding-above double-padding-below">
+<section class="line double-padding-above double-padding-below" id="blog">
 
     <div class="wrapper">
 

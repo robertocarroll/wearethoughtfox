@@ -20,7 +20,7 @@
 
 	<footer>	
 
-		<?php get_template_part('templates/entry-meta'); ?>		
+		<?php get_template_part('templates/entry-meta'); ?>	
 
 		<nav class="next-previous">
 
@@ -37,6 +37,11 @@
 
 		<?php edit_post_link( __( 'Edit', 'wearethoughtfox' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
+
+	<div class="comments double-padding-above">
+		<?php disqus_embed('wearethoughtfox'); ?>
+	</div>		
+
 </article><!-- #post-## -->
 </div><!-- .article -->
 </div><!-- .wrapper -->

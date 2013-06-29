@@ -90,7 +90,7 @@
  */
 
 .line {	
-	border-top: $quarter-spacing-unit $watf-red solid;
+	border-top: 1px $watf-red solid;
 	clear:both;
 }
 
@@ -103,3 +103,14 @@
 			width: 94%;
 			float: none;
 		}
+
+
+.pad-in {
+		@include gs-pad (wd, padinfull);
+	}
+
+	.border-side {
+		border-right: 1px solid $watf-grey;
+		padding-left: 0;
+	}
+

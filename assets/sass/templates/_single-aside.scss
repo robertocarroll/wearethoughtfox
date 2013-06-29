@@ -1,0 +1,37 @@
+.updated {
+    float: left;
+}
+
+
+.project-type:before{
+            content:" • ";
+            padding-left: $quarter-spacing-unit;
+        }
+
+
+
+.entry-content {
+    clear: left;
+}
+
+
+
+
+.entry-meta li {
+
+        &:after{
+            content:" • ";
+            padding-right: $quarter-spacing-unit;
+        }
+
+        &:last-child:after{
+            display:none;
+        }
+    }
+
+
+.next {
+    	float:right;
+    }
+
+

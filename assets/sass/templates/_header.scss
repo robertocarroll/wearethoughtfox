@@ -1,7 +1,4 @@
 
-.banner {	
-	border-top: $half-spacing-unit $watf-red solid;
-}
 
 .logo {	
 	padding-top: $base-spacing-unit;
@@ -20,7 +17,7 @@
 }
 
 .nav-main {
-	background: none repeat scroll 0 0 $watf-red;
+	background: none repeat scroll 0 0 darken($watf-grey, 30%);
     width: 100%;
     text-align: center;
     clear: both;
