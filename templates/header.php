@@ -1,9 +1,9 @@
 <header role="banner">
 
 <?php if ( is_front_page() ) {?>
-<div class="banner">
+
  <div class="splash">
-  <div class="splash-inner"> 
+    <div class="splash-inner"> 
         <img alt="logo" class="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-with-person.png">
         <?php 
            // Custom widget Area Start
@@ -12,10 +12,10 @@
           // Custom widget Area End
           ?>             
    </div>      
-</div>  
-</div>
+  </div>  
 
 <?php } ?>    
+  
   
     <nav class="nav-main" role="navigation">
       <?php
@@ -24,6 +24,6 @@
         endif;
       ?>
     </nav>
+
 </header>
 
-<br style="clear:both;" />

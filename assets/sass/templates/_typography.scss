@@ -31,6 +31,12 @@
 	    @include respond-to(tablet) { @include font-size($h6-size); }
 	}
 
+	.sans {
+		font-family: $sans-base-font-family;
+		font-style: normal;
+		font-weight: 400;
+	}
+
 	
 	p {
 		font-style: normal;

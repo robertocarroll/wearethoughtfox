@@ -9,35 +9,36 @@
 	background: lighten($watf-grey, 20%);
 	@include gs-span(wd, 1, 12);
 	text-align: center;	
+	
 }
 
 .splash-inner {
 	@include gs-span(wd, 3, 10, (1, 12));
 	padding-bottom: $half-spacing-unit;
+	
 }
 
 .nav-main {
-	background: none repeat scroll 0 0 darken($watf-grey, 30%);
-    width: 100%;
+	background: none repeat scroll 0 0 darken($watf-grey, 30%);	
     text-align: center;
     clear: both;
-}
-
-
-
-.nav-main li {
-	padding-top: $quarter-spacing-unit;
-	padding-bottom: $quarter-spacing-unit;
-	margin-right: $base-spacing-unit;
+    @extend .sans;
+	font-size: $milli-size;
 
 }
+
 
 .nav-main li a {
-	color: #FFFFFF;
-    text-shadow: none;	
-    text-align: center;
-    text-transform: uppercase;
-    
+    text-transform: uppercase;    
 }
 
+.nav-main li {
+	padding-bottom: $quarter-spacing-unit;
+	padding-top: $quarter-spacing-unit;
+	padding-right: gs-width(wd, 1, 1, false, true);
+	padding-left: gs-width(wd, 1, 1, false, true);
+}
 
+.content {
+	clear: both;
+}

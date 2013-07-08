@@ -37,11 +37,11 @@
 
 	/*  Custom links */
 
-	.nav-main li.current-menu-item a, .nav-main li.current-page-ancestor a, .nav-main li.current-post-ancestor a {color: lighten( $watf-grey, 10% );}
+	.nav-main li.current-menu-item a, .nav-main li.current-page-ancestor a, .nav-main li.current-post-ancestor a {color: $watf-red;}
 
 	.nav-main li a {color: white; text-decoration: none; @include transition(color, 0.5s, ease-out);}
 
-	.nav-main li a:hover, .nav-main li a:focus {color: lighten( $watf-grey, 10% ); text-decoration: none;} 
+	.nav-main li a:hover, .nav-main li a:focus {color: $watf-red; text-decoration: none;} 
 
 
 
