@@ -18,13 +18,19 @@
 	
 }
 
-.nav-main {
+.nav-wrapper {
 	background: none repeat scroll 0 0 darken($watf-grey, 30%);	
     text-align: center;
     clear: both;
     @extend .sans;
 	font-size: $milli-size;
 
+}
+
+.menu-main-navigation-container {
+	@include gs-span(wd, 3, 10);
+	clear: both;
+	float: none;
 }
 
 
@@ -36,7 +42,7 @@
 	padding-bottom: $quarter-spacing-unit;
 	padding-top: $quarter-spacing-unit;
 	padding-right: gs-width(wd, 1, 1, false, true);
-	padding-left: gs-width(wd, 1, 1, false, true);
+	
 }
 
 .content {
