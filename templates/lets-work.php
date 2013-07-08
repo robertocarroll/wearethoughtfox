@@ -2,9 +2,12 @@
 
     <div class="wrapper">
 
-        <header class="section-title">
-            <h2>About us</h2>
-        </header>
+         <?php 
+           // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('work_3') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?>  
 
         <?php 
            // Custom widget Area Start
@@ -21,12 +24,7 @@
           // Custom widget Area End
           ?>  
 
-          <?php 
-           // Custom widget Area Start
-           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('work_3') ) : ?>
-          <?php endif;
-          // Custom widget Area End
-          ?>  
+         
 
       </div>
         
