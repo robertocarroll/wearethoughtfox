@@ -16,20 +16,12 @@
           // Custom widget Area End
           ?>  
 
-         <div class="article-two">
           <?php 
            // Custom widget Area Start
            if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('work_2') ) : ?>
           <?php endif;
           // Custom widget Area End
           ?>  
-
-         
-
-      </div>
-        
-
-        <br style="clear:both;" />
 
     </div><!-- /.wrapper -->
 

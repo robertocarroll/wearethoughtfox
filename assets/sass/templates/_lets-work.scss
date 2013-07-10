@@ -1,26 +1,34 @@
 
 .about-us {
 	@extend .delta;
-	@include gs-span(wd, 3, 7);
+    @extend .double-margin-below;
+    line-height:  $lowest-line-height;
+	@include gs-span(wd, 4, 9);
 	@include gs-pad(wd, padfull);
+    text-align: center;
+    color: $watf-blue-grey;
+    font-weight: 300;
 
 }
 
+.clients ul, .services ul {
+        margin: 0;
+    }
+
+
 .clients li, .services li {
-
-        &:after{
-            content:" • ";
-        }
-
-        &:last-child:after{
-            display:none;
-        }
+        @extend .sans;
     }
 
 .clients {
-	
+	@include gs-span(wd, 10, 12);
+    @include gs-pad(wd, padfull);
+    text-align: center;
 }
 
 .services {
+    @include gs-span(wd, 1, 3);
+    @include gs-pad(wd, padfull);
+    text-align: center;
 	
 }

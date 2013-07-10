@@ -82,7 +82,7 @@
 }
 
 .darkest-grey {
-	color: darken($watf-grey, 20%);
+	color: $watf-blue-grey;
 }
 
 /**
@@ -109,8 +109,7 @@
 		@include gs-pad (wd, padinfull);
 	}
 
-	.border-side {
+.border-side {
 		border-right: 1px solid $watf-grey;
 		padding-left: 0;
 	}
-

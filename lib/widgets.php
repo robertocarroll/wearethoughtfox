@@ -7,7 +7,7 @@ function watf_widgets_init() {
   register_sidebar( array(
     'name' => 'Home top',
     'id' => 'home_top_1',
-    'before_widget' => '<h1 class="beta narrow darkest-grey">',
+    'before_widget' => '<h1 class="beta serif-light nocase narrow darkest-grey">',
     'after_widget' => '</h1>',
     'before_title' => '',
     'after_title' => '',
@@ -28,7 +28,7 @@ function watf_widgets_init() {
     'id' => 'work_2',
     'before_widget' => '<div class="clients">',
     'after_widget' => '</div>',
-    'before_title' => '<h2 class="gamma margin-below-half">',
+    'before_title' => '<h2 class="standard">',
     'after_title' => '</h2>',
   ) );
 
@@ -37,7 +37,7 @@ function watf_widgets_init() {
     'id' => 'work_3',
     'before_widget' => '<div class="services">',
     'after_widget' => '</div>',
-    'before_title' => '<h2 class="gamma margin-below-half">',
+    'before_title' => '<h2 class="standard">',
     'after_title' => '</h2>',
   ) );
 

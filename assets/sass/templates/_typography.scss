@@ -37,6 +37,32 @@
 		font-weight: 400;
 	}
 
+	.serif {
+		font-family: $base-font-family;
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	.serif-light {
+		font-family: $base-font-family;
+		font-style: normal;
+		font-weight: 300;
+	}	
+
+	h1, h2, h3, h4, h5, h6 {
+		@extend .sans;
+		@extend .uppercase;
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	.standard {
+		@extend .epsilon;
+		@extend .margin-below-half;
+		@extend .darkest-grey;
+		line-height: 17px;
+
+	}
 	
 	p {
 		font-style: normal;
@@ -96,6 +122,8 @@
 	.no-padding {margin: 0;}
 
 	.uppercase {text-transform: uppercase;}
+
+	.nocase {text-transform: none;}
 
 	/*  <strong>For emphasizing a snippet of text with important</strong> */
 	strong {
