@@ -41,5 +41,15 @@ function watf_widgets_init() {
     'after_title' => '</h2>',
   ) );
 
+   register_sidebar( array(
+    'name' => 'Footer contact',
+    'id' => 'footer_1',
+    'before_widget' => '<div class="footer-contact vcard">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="standard">',
+    'after_title' => '</h2>',
+  ) );
+
+
 }
 add_action( 'widgets_init', 'watf_widgets_init' );

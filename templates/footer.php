@@ -1,18 +1,27 @@
+
+
 <footer class="content-info double-margin-above" role="contentinfo">
 
-		<div class="wrapper">
-			 <div class="contact-us double-margin-above double-margin-below">
-				<h2 class="no-margin">
-				 Get in touch:
-				  <a href="mailto:hello@wearethoughtfox.com">hello@wearethoughtfox.com</a>
-				</h2>
-			</div>
-		</div>	
+<div class="wrapper">
+  
+        <?php 
+           // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer_1') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?>              
 
-	<div class="copyright white centre padding-below">		
+		
+			 <div class="footer-logo">
+				<img alt="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo.jpg">
+			</div>
+		
+
+	<div class="copyright darkest-grey centre padding-below">		
     	We Are Thought Fox Ltd, Registered in England and Wales, no. 8051628.
 	</div>
 
+</div>		
 </footer>
 
 <?php wp_footer(); ?>

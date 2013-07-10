@@ -2,6 +2,7 @@
 .about-us {
 	@extend .delta;
     @extend .double-margin-below;
+    @extend .margin-above-half;
     line-height:  $lowest-line-height;
 	@include gs-span(wd, 4, 9);
 	@include gs-pad(wd, padfull);

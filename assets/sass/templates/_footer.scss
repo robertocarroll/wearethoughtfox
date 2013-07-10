@@ -1,3 +1,7 @@
+
+/**
+ * Not using this but I like the shadow box 
+ 
 @import "photoshop-drop-shadow";
 
 .contact-us {
@@ -10,11 +14,31 @@
     line-height: $lowest-line-height;  
 }
 
+*/
 
 footer[role="contentinfo"] {
-	background: $watf-red;
+	background: tint( $watf-blue-grey, 90% );
 	clear:both;
 }	
+
+
+.footer-contact {
+	@include gs-span(wd, 2, 4);
+	@extend .double-margin-above;
+	@extend .sans;
+	@extend .darkest-grey;
+	font-size: $milli-size;
+	text-align: center;
+
+}
+
+.footer-logo {
+	@include gs-span(wd, 6, 7);
+	@extend .margin-above;
+	@extend .margin-below;
+}
+
+
 
 .copyright {
 	clear:both;
