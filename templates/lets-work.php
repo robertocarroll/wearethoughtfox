@@ -1,4 +1,4 @@
-<section class="line double-padding-above double-padding-below" id="about">
+<section id="about">
 
     <div class="wrapper">
 

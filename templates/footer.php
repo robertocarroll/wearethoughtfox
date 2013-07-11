@@ -1,6 +1,6 @@
 
 
-<footer class="content-info double-margin-above" role="contentinfo">
+<footer id="contact" class="content-info"  role="contentinfo">
 
 <div class="wrapper">
   

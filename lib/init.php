@@ -32,10 +32,26 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'collection-zoom', 1500, 1500 ); // 1500 pixels wide by 1500 pixels high
+	add_image_size( 'blog-thumb', 600, 600 ); // 
+	add_image_size( 'featured-work', 1000, 1000 ); // 
+	add_image_size( 'thumb-work', 400, 400 ); //
 
 }
 
+
+/*
+| -------------------------------------------------------------------
+| Remove fixed dimensions http://wordpress.stackexchange.com/questions/5568/filter-to-remove-image-dimension-attributes
+| -------------------------------------------------------------------
+| */
+
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+
+function remove_thumbnail_dimensions( $html ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
 
 /**
  * Pagination for archive, taxonomy, category, tag and search results pages

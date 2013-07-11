@@ -6,7 +6,7 @@
 }
 
 .splash {
-	background: lighten($watf-grey, 20%);
+	background: tint( $watf-blue-grey, 90% );
 	@include gs-span(wd, 1, 12);
 	text-align: center;	
 	
