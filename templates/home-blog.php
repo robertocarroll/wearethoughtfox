@@ -45,8 +45,14 @@ while ( $most_recent_sticky_post_blog->have_posts() ) : $most_recent_sticky_post
 		
         </div><!-- /.featured-blog -->
 
-<?php endwhile; wp_reset_query(); ?>
+        <?php endwhile; wp_reset_query(); ?>
 
+        <?php 
+           // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blog-button') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?>  
 
     </div><!-- /.wrapper -->
 

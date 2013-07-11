@@ -38,9 +38,17 @@
 	clear:both;
 }
 
+.more-button {
+	clear:both;
+	text-align: center;
+	text-transform: uppercase;
+	@extend .delta;
+	font-weight: 300;
+}
+
 .first-work-post, .second-work-post, .third-work-post, .fourth-work-post {
 	text-align: center;
-	@extend .double-padding-below;
+	@extend .padding-below;
 }
 
 .first-work-post {
@@ -78,13 +86,13 @@
 .first-blog-post {
 	@include gs-span(wd, 1, 5);
 	text-align: center;
-	@extend .double-padding-below;
+	@extend .padding-below;
 }
 
 .second-blog-post {
 	@include gs-span(wd, 8, 12);
 	text-align: center;
-	@extend .double-padding-below;
+	@extend .padding-below;
 }
 
 .blog-date {

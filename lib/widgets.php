@@ -50,6 +50,24 @@ function watf_widgets_init() {
     'after_title' => '</h2>',
   ) );
 
+    register_sidebar( array(
+    'name' => 'Work button',
+    'id' => 'work-button',
+    'before_widget' => '<div class="more-button">',
+    'after_widget' => '</div>',
+    'before_title' => '',
+    'after_title' => '',
+  ) );
+
+     register_sidebar( array(
+    'name' => 'Blog button',
+    'id' => 'blog-button',
+    'before_widget' => '<div class="more-button">',
+    'after_widget' => '</div>',
+    'before_title' => '',
+    'after_title' => '',
+  ) );
+
 
 }
 add_action( 'widgets_init', 'watf_widgets_init' );

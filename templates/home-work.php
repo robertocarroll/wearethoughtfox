@@ -97,6 +97,14 @@
 
         <?php endwhile; wp_reset_query(); ?>
 
+         <?php 
+           // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('work-button') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?> 
+
     </div><!-- /.wrapper -->
+
 
 </section>
