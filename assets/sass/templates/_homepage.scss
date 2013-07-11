@@ -9,6 +9,9 @@
 	@extend .line; 
 }
 
+#blog {
+	@extend .double-margin-above; 
+}
 
 .featured-work-image {
 	@include gs-span(wd, 1, 9);

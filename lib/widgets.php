@@ -68,6 +68,41 @@ function watf_widgets_init() {
     'after_title' => '',
   ) );
 
+     register_sidebar( array(
+    'name' => 'First Bio',
+    'id' => 'bio_1',
+    'before_widget' => '<div class="first-bio">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="standard">',
+    'after_title' => '</h2>',
+  ) );
+
+      register_sidebar( array(
+    'name' => 'Second Bio',
+    'id' => 'bio_2',
+    'before_widget' => '<div class="second-bio">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="standard">',
+    'after_title' => '</h2>',
+  ) );
+
+       register_sidebar( array(
+    'name' => 'Third Bio',
+    'id' => 'bio_3',
+    'before_widget' => '<div class="third-bio">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="standard">',
+    'after_title' => '</h2>',
+  ) );
+
+         register_sidebar( array(
+    'name' => 'Fourth Bio',
+    'id' => 'bio_4',
+    'before_widget' => '<div class="fourth-bio">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="standard">',
+    'after_title' => '</h2>',
+  ) );
 
 }
 add_action( 'widgets_init', 'watf_widgets_init' );

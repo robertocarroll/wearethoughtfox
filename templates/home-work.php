@@ -72,7 +72,7 @@
 
                     ) );
                     
-                    while ( $most_recent_work_not_sticky->have_posts() ) : $most_recent_work_not_sticky->the_post(); ?>
+    while ( $most_recent_work_not_sticky->have_posts() ) : $most_recent_work_not_sticky->the_post(); ?>
     
         <div class="<?php echo $watf_style_classes[$watf_style_index++ % $watf_styles_count]; ?>"> 
 
@@ -93,9 +93,9 @@
 
 		</div><!-- /.article -->
 
-    </div><!-- /.more-work -->
-
         <?php endwhile; wp_reset_query(); ?>
+
+    </div><!-- /.more-work -->
 
          <?php 
            // Custom widget Area Start
