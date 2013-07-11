@@ -19,6 +19,10 @@ register_nav_menus(array(
     'primary_navigation' => __('Primary Navigation', 'watf'),
   ));
 
+register_nav_menus(array(
+    'primary_navigation_home' => __('Primary Navigation Home', 'watf'),
+  ));
+
 
 /*
 | -------------------------------------------------------------------

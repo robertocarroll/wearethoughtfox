@@ -14,9 +14,13 @@
    </div>      
   </div>  
 
-<?php } ?>    
+  <?php get_template_part('templates/nav-home'); ?> 
+
+<?php } else  { ?>    
   
-<?php get_template_part('templates/nav'); ?> 
+<?php get_template_part('templates/nav'); ?>
+
+<?php } ?>
 
 </header>
 
