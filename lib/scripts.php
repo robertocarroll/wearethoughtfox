@@ -46,10 +46,8 @@ function watf_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('modernizr', get_template_directory_uri() . '/assets/javascripts/modernizr-2.6.2.min.js', false, null, false);
   wp_register_script('watf_main', get_template_directory_uri() . '/assets/build/main.min.js', false, null, true);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('modernizr');
   wp_enqueue_script('watf_main');
 }
 add_action('wp_enqueue_scripts', 'watf_scripts', 100);
