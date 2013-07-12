@@ -36,6 +36,7 @@
 
 .bios {
     clear: both;
+    @extend .margin-above;
 }
 
 .first-bio, .second-bio, .third-bio, .fourth-bio {

@@ -15,10 +15,10 @@ gs = {
 				switch (e.which || e.keyCode) {
 					case 71:
 					
-						var gw = document.getElementById('gridsetoverlaywrap');
+						var gw = document.querySelectorAll('.gridsetoverlaywrap, #gridsetoverlaystyles, #gridscreenwidthwrap');
 					
-						if (!gw) gs.show();
-						else gs.remove(gw);
+						if (gw.length == 0) gs.show();
+						else { window.location.href = window.location.href.replace('?gridset=show', '') }
 						
 						gs.prevent(e);
 						break;
@@ -32,15 +32,6 @@ gs = {
 	
 	},
 	
-	remove: function (gw) {
-	
-		document.body.removeChild(gw);
-		
-		if(window.detachEvent) window.detachEvent('onresize', gs.width);
-		else window.removeEventListener('resize', gs.width, false);
-	
-	},
-	
 	width: function () {
 		
 		var swv = document.getElementById('gridscreenwidthval');
@@ -50,60 +41,128 @@ gs = {
 
 	show: function () {
 	
-		var p = ['wd','wt','wm'],
-			c = [12,12,6],
-			w = [1024,768,320],
-			b = document.getElementsByTagName('body')[0],
-			gw = '<div id="gridwrap"><div id="gridscreenwidthwrap"><p id="gridscreenwidth">Screen width: <strong id="gridscreenwidthval"></strong></p></div><div id="gridoverlay" class="wrapper">',
-		
-			k = 0, breaks = '',
+		var b = document.getElementsByTagName('body')[0],
+				gridareas = document.querySelectorAll('[class*=-showgrid]'),
+				areacount = gridareas.length,
+				wrapper = document.querySelectorAll('.wrapper'),
 			
-			styles = '<style id="gridsetoverlaystyles" type="text/css">#gridsetoverlaywrap{position:static;}#gridwrap{display:block;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;pointer-events:none;font-family:Helvetica, Arial, sans-serif !important;}#gridoverlay{position:relative;height:100%;overflow:hidden !important;background:none !important;}#gridoverlay div{display:block;position:static;height:100%;color:#bcbcff;}#gridoverlay .gridset{position:absolute;width:100%;height:100%;top:0;left:0;opacity:0.7;}#gridoverlay .gridset div{text-align:left;font-size:10px !important;border-right:1px solid #bcbcff;border-left:1px solid #bcbcff;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}#gridoverlay div small{width:100%;display:block;text-align:center;color:#7D80DB;font-weight:700 !important;border-bottom:1px solid #bcbcff;border-top:1px solid #bcbcff;padding-top:0 !important;background-color:rgb(240,240,255) !important;text-transform:none !important;height:22px !important;line-height:22px !important;text-style:normal !important;}#gridoverlay .gridset:nth-child(2) div{border-style:dashed;padding-top:23px;}#gridoverlay .gridset:nth-child(2) small{border-style:dashed;}#gridoverlay .gridset:nth-child(3) div{border-style:dotted;padding-top:45px;}#gridoverlay .gridset:nth-child(3) small{border-style:dotted;}#gridsetoverlaywrap .noshow{display:none;}#gridscreenwidthwrap{display:block !important;width:100% !important;position:absolute !important;bottom:0 !important;left:0 !important;height:30px !important;border-top:1px solid #7D80DB !important;opacity:0.7 !important;background-color:rgb(240,240,255) !important;}#gridscreenwidth{display:block !important;width:100% !important;text-align:center !important;font-size:12px !important;line-height:1 !important;padding-top:8px !important;font-family:Helvetica, Arial, sans-serif !important; margin: 0 !important;color:#7D80DB !important;}@media only screen and (max-width:767px) {#gridsetoverlaywrap [class*=wm1],#gridsetoverlaywrap [class*=wm2],#gridsetoverlaywrap [class*=wm3],#gridsetoverlaywrap [class*=wm4],#gridsetoverlaywrap [class*=wm5],#gridsetoverlaywrap [class*=wm6],#gridsetoverlaywrap .wm-all{display:block;float:left;margin-right:-100%;}#gridsetoverlaywrap [class*=wm1]{width:12.944288933566053%;margin-left:0%;}#gridsetoverlaywrap [class*=wm2]{width:12.98758086979872%;margin-left:17.319288933566%;}#gridsetoverlaywrap [class*=wm3]{width:12.97752197190795%;margin-left:34.681869803365%;}#gridsetoverlaywrap [class*=wm4]{width:13.003138639551295%;margin-left:52.034391775273%;}#gridsetoverlaywrap [class*=wm5]{width:13.01201806742326%;margin-left:69.412530414824%;}#gridsetoverlaywrap [class*=wm6]{width:13.044201517752722%;margin-left:86.799548482247%;}#gridsetoverlaywrap .wm-hide{display:none !important;}}@media only screen and (min-width:768px) and (max-width:1023px) {#gridsetoverlaywrap [class*=wt1],#gridsetoverlaywrap [class*=wt2],#gridsetoverlaywrap [class*=wt3],#gridsetoverlaywrap [class*=wt4],#gridsetoverlaywrap [class*=wt5],#gridsetoverlaywrap [class*=wt6],#gridsetoverlaywrap [class*=wt7],#gridsetoverlaywrap [class*=wt8],#gridsetoverlaywrap [class*=wt9],#gridsetoverlaywrap [class*=wt10],#gridsetoverlaywrap [class*=wt11],#gridsetoverlaywrap [class*=wt12],#gridsetoverlaywrap .wt-all{display:block;float:left;margin-right:-100%;}#gridsetoverlaywrap [class*=wt1]{width:6.644875896414544%;margin-left:0%;}#gridsetoverlaywrap [class*=wt2]{width:6.6517333534937055%;margin-left:8.4677925664145%;}#gridsetoverlaywrap [class*=wt3]{width:6.6570639182257185%;margin-left:16.942442589908%;}#gridsetoverlaywrap [class*=wt4]{width:6.660773884613598%;margin-left:25.422423178134%;}#gridsetoverlaywrap [class*=wt5]{width:6.65818469084358%;margin-left:33.906113732748%;}#gridsetoverlaywrap [class*=wt6]{width:6.65602208261202%;margin-left:42.387215093591%;}#gridsetoverlaywrap [class*=wt7]{width:6.656688477036897%;margin-left:50.866153846203%;}#gridsetoverlaywrap [class*=wt8]{width:6.657286642431464%;margin-left:59.34575899324%;}#gridsetoverlaywrap [class*=wt9]{width:6.65783533185947%;margin-left:67.825962305672%;}#gridsetoverlaywrap [class*=wt10]{width:6.66017516184187%;margin-left:76.306714307531%;}#gridsetoverlaywrap [class*=wt11]{width:6.662388996951002%;margin-left:84.789806139373%;}#gridsetoverlaywrap [class*=wt12]{width:6.65978406367613%;margin-left:93.275111806324%;}#gridsetoverlaywrap .wt-hide{display:none !important;}}@media only screen and (min-width:1024px) {#gridsetoverlaywrap [class*=wd1],#gridsetoverlaywrap [class*=wd2],#gridsetoverlaywrap [class*=wd3],#gridsetoverlaywrap [class*=wd4],#gridsetoverlaywrap [class*=wd5],#gridsetoverlaywrap [class*=wd6],#gridsetoverlaywrap [class*=wd7],#gridsetoverlaywrap [class*=wd8],#gridsetoverlaywrap [class*=wd9],#gridsetoverlaywrap [class*=wd10],#gridsetoverlaywrap [class*=wd11],#gridsetoverlaywrap [class*=wd12],#gridsetoverlaywrap .wd-all{display:block;float:left;margin-right:-100%;}#gridsetoverlaywrap [class*=wd1]{width:7.06426570700682%;margin-left:0%;}#gridsetoverlaywrap [class*=wd2]{width:7.07130884330493%;margin-left:8.4314532070068%;}#gridsetoverlaywrap [class*=wd3]{width:7.0731784172421905%;margin-left:16.869949550312%;}#gridsetoverlaywrap [class*=wd4]{width:7.074476768415919%;margin-left:25.310315467554%;}#gridsetoverlaywrap [class*=wd5]{width:7.077367493904722%;margin-left:33.75197973597%;}#gridsetoverlaywrap [class*=wd6]{width:7.076714715270546%;margin-left:42.196534729875%;}#gridsetoverlaywrap [class*=wd7]{width:7.076146820938859%;margin-left:50.640436945145%;}#gridsetoverlaywrap [class*=wd8]{width:7.082507690766591%;margin-left:59.083771266084%;}#gridsetoverlaywrap [class*=wd9]{width:7.07910459916307%;margin-left:67.533466456851%;}#gridsetoverlaywrap [class*=wd10]{width:7.075939430056024%;margin-left:75.979758556014%;}#gridsetoverlaywrap [class*=wd11]{width:7.0806865328320105%;margin-left:84.42288548607%;}#gridsetoverlaywrap [class*=wd12]{width:7.080412356098321%;margin-left:92.870759518902%;}#gridsetoverlaywrap .wd-hide{display:none !important;}}</style>';
-						
-		while (p[k]) {
+				styles = '.gridsetoverlaywrap{padding:0 !important;display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:10000;pointer-events:none;}.gridsetnoareas .gridsetoverlaywrap{position:fixed;}.gridwrap{padding:0 !important;display:block;position:absolute;top:0;left:0;width:100%;height:100%;font-family:Helvetica, Arial, sans-serif !important;}.gridoverlay{padding:0 !important;position:relative;height:100%;overflow:hidden !important;background:none !important;}.gridoverlay .gridset{padding:0 !important;position:absolute;width:100%;height:100%;top:0;left:0;opacity:0.8; display:block;}.gridoverlay .gridset div{padding:0;text-align:left;font-size:10px !important;border:1px solid #FFD800 !important;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:100%;}.gridoverlay .gridset > div{border:none !important;height:100%;position:absolute;top:0;left:0;width:100%;}.gridoverlay div small{width:100%;display:block;text-align:center;font-weight:400 !important;letter-spacing: 1px !important;padding-top:0 !important;text-transform:none !important;height:22px !important;line-height:22px !important;text-style:normal !important;border-bottom:1px solid #FFD800 !important;color:#333 !important;background-color:#FFF79F !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(2){padding-top:23px !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(2) small{border-bottom:1px dashed #FFD800 !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(2) > div{border:1px dashed #FFD800 !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(3){padding-top:45px !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(3) small{border-bottom:1px dotted #FFD800 !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(3) > div{border:1px dotted #FFD800 !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(4){padding-top:67px !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(4) small{border-bottom:1px double #FFD800 !important;}.gridsetnoareas .gridoverlay .gridset > div:nth-child(4) > div{border:1px double #FFD800 !important;}.gridsetoverlaywrap .noshow{display:none;}#gridscreenwidthwrap{margin:0 !important;padding:0 !important;display:none;width:100%;position:fixed !important;z-index:10000 !important;bottom:0 !important;left:0 !important;height:30px !important;opacity:0.95;border-top:1px solid #FFD800 !important;color:#333;background-color:#FFF79F !important;font-family:Helvetica, Arial, sans-serif !important;}#gridscreenwidth{margin:0 !important;display:block;width:100%;text-align:center;font-size:12px;line-height:1;padding-top:8px !important;}#gridscreenwidth strong{text-transform:none;}',
+				
+				newstyles = document.createElement('style'),
+				newwidth = document.createElement('div'),
+				head = document.getElementsByTagName('head'),
+				newfavicon = document.createElement('link'),
+				newgsstyles = document.createElement('link');
 		
-			var hides = '', 
-				l = 0;
+		newstyles.id = 'gridsetoverlaystyles';
+		newstyles.innerHTML = styles;
+		newstyles.type = 'text/css';
 		
-			if (w[k] != breaks && k == 0) gw += '<div>';
-			else if (w[k] != breaks) gw += '</div><div>';
+		newwidth.id = 'gridscreenwidthwrap';
+		newwidth.innerHTML = '<p id="gridscreenwidth">Screen width: <strong id="gridscreenwidthval"></strong></p>';
 		
-			while (p[l]) {
+		b.appendChild(newstyles);
+		b.appendChild(newwidth);
 		
-				if (l != k && w[l] != w[k]) hides += p[l] + '-hide ';
-				l++;			
+		var newwidthdisplay = (newwidth.currentStyle) ? newwidth.currentStyle.display : getComputedStyle(newwidth, null).display;
 		
-			}
+		newfavicon.rel = "shortcut icon";
+		newfavicon.id = "gridsetfavicon";
+		newfavicon.href = "http://dev.gridsetapp.com/app/img/favicon.ico";
 		
-			gw += '<div class="gridset ' + hides + '"><div class="'+p[k]+'1"><small>'+p[k]+'1</small></div>';
+		head[0].appendChild(newfavicon);
 		
-			var i = 1;
+		if (newwidthdisplay != 'block') {
 		
-			while (i++ < c[k]) gw += '<div class="'+p[k]+i+'"><small>'+p[k]+i+'</small></div>';
-		
-			gw += '</div>';
-		
-			if (k == w.length - 1) gw += '</div>';
-		
-			breaks = w[k];
-		
-			k++;
+			newgsstyles.rel = "stylesheet";
+			newgsstyles.id = "gridsetstyles";
+			newgsstyles.href = "https://get.gridsetapp.com/18676/";
+			head[0].appendChild(newgsstyles);
 		
 		}
 		
-		gw += '</div></div>';
+		if (areacount) {
+			
+			var j = areacount;
+			
+			while (j-- > 0) {
+			
+				var area = gridareas[j];
+			
+				gs.buildgrid(area, j, areacount);
+				
+				if (window.getComputedStyle(area,null).getPropertyValue("position") == 'static') area.style.position = 'relative';
+				
+			}
+			
+		}
+		else {
+			
+			if (!b.className.match('gridsetnoareas')) b.className += ' gridsetnoareas';
+			
+			gs.buildgrid(b, j, areacount);
 		
-		var newgw = document.createElement('div');
-		
-		newgw.id = 'gridsetoverlaywrap';
-		
-		newgw.innerHTML = gw + styles;
-		
-		b.appendChild(newgw);
+		}
 		
 		gs.width();
 		gs.bind(window, 'resize', gs.width);
 	
+	},
+	
+	buildgrid: function (area, j, showgrid) {
+		
+		var set = JSON.parse('{"id":"18676","name":"WATF site Clint","widths":{"1024":{"width":1024,"grids":{"wd":{"name":"WATF desktop","prefix":"wd","width":1024,"columns":{"wd1":{"name":"wd1","unit":"%","percent":7.06426571,"px":72.34},"wd2":{"name":"wd2","unit":"%","percent":7.07130884,"px":72.41},"wd3":{"name":"wd3","unit":"%","percent":7.07317842,"px":72.43},"wd4":{"name":"wd4","unit":"%","percent":7.07447677,"px":72.44},"wd5":{"name":"wd5","unit":"%","percent":7.07736749,"px":72.47},"wd6":{"name":"wd6","unit":"%","percent":7.07671472,"px":72.47},"wd7":{"name":"wd7","unit":"%","percent":7.07614682,"px":72.46},"wd8":{"name":"wd8","unit":"%","percent":7.08250769,"px":72.52},"wd9":{"name":"wd9","unit":"%","percent":7.0791046,"px":72.49},"wd10":{"name":"wd10","unit":"%","percent":7.07593943,"px":72.46},"wd11":{"name":"wd11","unit":"%","percent":7.08068653,"px":72.51},"wd12":{"name":"wd12","unit":"%","percent":7.08041236,"px":72.5}},"gutter":{"unit":"px","px":14,"percent":1.3671875},"ratio":{"name":"even","value":1}}}},"768":{"width":768,"grids":{"wt":{"name":"WATF tablet","prefix":"wt","width":768,"columns":{"wt1":{"name":"wt1","unit":"%","percent":6.6448759,"px":51.03},"wt2":{"name":"wt2","unit":"%","percent":6.65173335,"px":51.09},"wt3":{"name":"wt3","unit":"%","percent":6.65706392,"px":51.13},"wt4":{"name":"wt4","unit":"%","percent":6.66077388,"px":51.15},"wt5":{"name":"wt5","unit":"%","percent":6.65818469,"px":51.13},"wt6":{"name":"wt6","unit":"%","percent":6.65602208,"px":51.12},"wt7":{"name":"wt7","unit":"%","percent":6.65668848,"px":51.12},"wt8":{"name":"wt8","unit":"%","percent":6.65728664,"px":51.13},"wt9":{"name":"wt9","unit":"%","percent":6.65783533,"px":51.13},"wt10":{"name":"wt10","unit":"%","percent":6.66017516,"px":51.15},"wt11":{"name":"wt11","unit":"%","percent":6.662389,"px":51.17},"wt12":{"name":"wt12","unit":"%","percent":6.65978406,"px":51.15}},"gutter":{"unit":"px","px":14,"percent":1.82291667},"ratio":{"name":"even","value":1}}}},"320":{"width":320,"grids":{"wm":{"name":"WATF mobile","prefix":"wm","width":320,"columns":{"wm1":{"name":"wm1","unit":"%","percent":12.94428893,"px":41.42},"wm2":{"name":"wm2","unit":"%","percent":12.98758087,"px":41.56},"wm3":{"name":"wm3","unit":"%","percent":12.97752197,"px":41.53},"wm4":{"name":"wm4","unit":"%","percent":13.00313864,"px":41.61},"wm5":{"name":"wm5","unit":"%","percent":13.01201807,"px":41.64},"wm6":{"name":"wm6","unit":"%","percent":13.04420152,"px":41.74}},"gutter":{"unit":"px","px":14,"percent":4.375},"ratio":{"name":"even","value":1}}}}},"prefixes":{"index":["wd","wt","wm"],"1024":["wd"],"768":["wt"],"320":["wm"]}}'),
+		
+				gridwrap = document.createElement('div'),
+				gridinner = (showgrid) ? '<div class="gridwrap"><div class="gridoverlay">' : '<div class="gridwrap"><div class="gridoverlay wrapper">';
+		
+		if (showgrid) gridwrap.className = 'gridsetoverlaywrap';
+		else gridwrap.className = 'gridsetoverlaywrap';	
+		
+		for (w in set.widths) {
+			
+			var width = set.widths[w],
+					hides = '';
+			
+			for (p in set.prefixes) {
+				
+				if (p != w && p != 'index') hides += set.prefixes[p][0] + "-hide ";
+				
+			}
+			
+			gridinner += '<div class="gridset ' + hides + '">';
+			
+			for (j in width.grids) {
+			
+				var grid = width.grids[j];
+				
+				if (!showgrid || area.className.match(grid.prefix + '-showgrid')) {
+				
+					gridinner += '<div>';
+					
+					for (k in grid.columns) {
+						
+						var col = grid.columns[k];
+						
+						gridinner += '<div class="' + col.name + '"><small>' + col.name + '</small></div>';
+					
+					}
+					
+					gridinner += '</div>';
+				
+				}
+			}
+			
+			gridinner += '</div>';
+		
+		}
+		
+		gridinner += '</div></div>';
+		
+		gridwrap.innerHTML = gridinner;
+		
+		area.appendChild(gridwrap);
+		
 	},
 	
 	bind : function (t, e, f) {

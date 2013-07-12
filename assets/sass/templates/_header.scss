@@ -24,6 +24,7 @@
     clear: both;
     @extend .sans;
 	font-size: $milli-size;
+	width: 100%;
 
 }
 
@@ -46,6 +47,16 @@
 	
 }
 
+ul#menu-main-navigation {
+	margin: 0;
+}
+
 .content {
 	clear: both;
+}
+
+.fix {
+    position: fixed;
+    top: 0 !important;
+    z-index: 1000;
 }

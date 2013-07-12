@@ -29,6 +29,11 @@
 <script src="<?php echo get_template_directory_uri(); ?>/javascripts/html5.js" type="text/javascript"></script>
 <![endif]-->
 
+<!-- Loading fonts
+	================================================== -->
+
+<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6272432/715002/css/fonts.css" />
+
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
