@@ -17,6 +17,12 @@ $(document).ready(function(){
   });
 });
 
+/* 
+ * For the highlighting the nav http://trevordavis.net/blog/jquery-one-page-navigation-plugin
+ */
+
+
+
 
 /* 
  * http://www.backslash.gr/content/blog/webdevelopment/6-navigation-menu-that-stays-on-top-with-jquery
@@ -38,11 +44,35 @@ if ($filter.size())
       if (!$filter.hasClass('fix') && scroll_top > $filter.offset().top) 
       {       
         $filter.addClass("fix");
+        
+        $('.nav').onePageNav({
+      currentClass: 'current-menu-item',
+      changeHash: false,
+      scrollSpeed: 750,
+      scrollOffset: 0,
+      scrollThreshold: 0,
+      filter: '',
+      easing: 'swing',
+      begin: function() {
+          //I get fired when the animation is starting
+      },
+      end: function() {
+          //I get fired when the animation is ending
+      },
+      scrollChange: function($currentListItem) {
+          //I get fired when you enter a section and I pass the list item of the section
+      }
+  });
+
       } 
 
       else if ($filter.hasClass('fix') && scroll_top < splash) 
       { 
         $filter.removeClass("fix");
+        $('.nav').onePageNav({
+    filter: ':not(#menu-item-283)'
+});
+        $("#menu-item-283").removeClass("current-menu-item");
       } 
     }); 
   } 
