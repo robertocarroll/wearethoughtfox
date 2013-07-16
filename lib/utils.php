@@ -66,3 +66,7 @@ function disqus_embed($disqus_shortname) {
         var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
     </script>';
 }
+
+
+
+

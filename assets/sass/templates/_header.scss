@@ -34,6 +34,13 @@
 	float: none;
 }
 
+.logo-small {
+	@include gs-span(wd, 1, 12);
+	text-align: center;	
+	z-index: 100;
+	margin-top: -54px;
+}
+
 
 .nav-main li a {
     text-transform: uppercase;  
@@ -41,14 +48,15 @@
 }
 
 .nav-main li {
-	padding-bottom: $quarter-spacing-unit;
-	padding-top: $quarter-spacing-unit;
+	padding-bottom: $half-spacing-unit;
+	padding-top: $half-spacing-unit;
 	padding-right: gs-width(wd, 1, 1, false, true);
 	
 }
 
 ul#menu-main-navigation, ul#menu-main-navigation-home {
 	margin: 0;
+	padding-left: 50px;
 }
 
 .content {
@@ -59,4 +67,14 @@ ul#menu-main-navigation, ul#menu-main-navigation-home {
     position: fixed;
     top: 0 !important;
     z-index: 1000;
+}
+
+.fix-logo {
+    position: fixed;
+    z-index: 1000;
+    margin-top: 0 !important;
+}
+
+.who-are-we {
+	padding-right: 150px !important;
 }

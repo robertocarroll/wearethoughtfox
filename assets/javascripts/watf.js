@@ -44,6 +44,7 @@ if ($filter.size())
       if (!$filter.hasClass('fix') && scroll_top > $filter.offset().top) 
       {       
         $filter.addClass("fix");
+        $(".logo-small").addClass("fix-logo");
         
         $('.nav').onePageNav({
       currentClass: 'current-menu-item',
@@ -70,9 +71,10 @@ if ($filter.size())
       { 
         $filter.removeClass("fix");
         $('.nav').onePageNav({
-    filter: ':not(#menu-item-283)'
-});
-        $("#menu-item-283").removeClass("current-menu-item");
+            filter: ':not(.our-work)'
+        });
+        $(".logo-small").removeClass("fix-logo");
+        $(".our-work").removeClass("current-menu-item");
       } 
     }); 
   } 
