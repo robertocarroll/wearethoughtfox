@@ -22,18 +22,41 @@
                     ) );
                 
                 while ( $most_recent_sticky_post->have_posts() ) : $most_recent_sticky_post->the_post(); ?>
-    
-            <?php
-                if ( has_post_thumbnail() ){ ?>
 
-                <div class="featured-work-image">
+         <?php
+                $royal_slideshow = get_post_meta($post->ID, 'slideshow', true);
+                if ($royal_slideshow)
+                {
+                
+            ?>
 
-                    <?php $thumbID = get_post_thumbnail_id($post->ID); ?>
-                    <?php the_post_thumbnail('featured-work'); ?>
+                <?php echo '<div class="featured-work-image">' ?>
 
-                </div>    
+                    <?php echo get_new_royalslider($royal_slideshow); ?>
+
+                <?php echo '</div>' ?>
+
+                <?php } 
+
+                else {
+
+                ?>                    
+                        <?php
+                                if ( has_post_thumbnail() ){ ?>
+
+                                <div class="featured-work-image">
+
+                                    <?php $thumbID = get_post_thumbnail_id($post->ID); ?>
+                                    <?php the_post_thumbnail('featured-work'); ?>
+
+                                </div>    
             
-            <?php } ?>
+                         <?php } ?>                               
+
+                  <?php  }       ?>       
+
+    
+            
 
          <div class="featured-work-text">   
 

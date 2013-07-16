@@ -7,3 +7,7 @@
       ?>
     </nav>
   </div>
+
+   <div class="logo-small">	
+			<a href="<?php echo get_settings('home'); ?>" accesskey="1" title="Home"><img src="<?php bloginfo('template_directory'); ?>/assets/images/logo-small.png" height="58px" alt="<?php bloginfo('name'); ?>" /></a>
+</div><!-- .logo-small -->
