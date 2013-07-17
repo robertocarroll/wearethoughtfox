@@ -4,7 +4,7 @@
     <nav class="nav-main wrapper" role="navigation">
       <?php
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation_home', 'menu_class' => 'nav'));
+          wp_nav_menu(array('theme_location' => 'primary_navigation_home', 'menu_class' => 'nav nav-home'));
         endif;
       ?>
     </nav>

@@ -23,7 +23,7 @@ $(document).ready(function(){
  * For the highlighting the nav http://trevordavis.net/blog/jquery-one-page-navigation-plugin
  */
 
- $('.nav').onePageNav({
+ $('.nav-home').onePageNav({
       currentClass: 'current-menu-item',
       changeHash: false,
       scrollSpeed: 750,
@@ -61,7 +61,7 @@ if($('body').hasClass('home')){
       {
 
        $filter.removeClass("fix");
-        $('.nav').onePageNav({
+        $('.nav-home').onePageNav({
             filter: ':not(.our-work)'
         });
 
