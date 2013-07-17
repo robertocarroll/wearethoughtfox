@@ -25,6 +25,7 @@
     @extend .sans;
 	font-size: $milli-size;
 	width: 100%;
+	z-index: 1;
 
 }
 
@@ -32,27 +33,27 @@
 	@include gs-span(wd, 3, 10);
 	clear: both;
 	float: none;
+
 }
 
 .logo-small {
-	@include gs-span(wd, 1, 12);
+	@include gs-span(wd, 6, 7);
 	text-align: center;	
-	z-index: 100;
+	z-index: 2;
 	margin-top: -40px;
-}
-
-
-.nav-main li a {
-    text-transform: uppercase;  
-    letter-spacing: -0.0375em;  
 }
 
 .nav-main li {
 	padding-bottom: $half-spacing-unit;
 	padding-top: $half-spacing-unit;
 	padding-right: gs-width(wd, 1, 1, false, true);
-	
 }
+
+.nav-main li a {
+    text-transform: uppercase;  
+    letter-spacing: -0.0375em;  
+}
+
 
 ul#menu-main-navigation, ul#menu-main-navigation-home {
 	margin: 0;
@@ -66,13 +67,13 @@ ul#menu-main-navigation, ul#menu-main-navigation-home {
 .fix {
     position: fixed;
     top: 0 !important;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .fix-logo {
     position: fixed;
-    z-index: 1000;
     margin-top: 0 !important;
+    z-index: 2;
 }
 
 .who-are-we {
