@@ -25,10 +25,9 @@ $(document).ready(function(){
 
  $('.nav-home').onePageNav({
       currentClass: 'current-menu-item',
-      changeHash: false,
-      scrollSpeed: 750,
-      scrollOffset: 2,
-      scrollThreshold: 0,
+      changeHash: true,
+      scrollSpeed: 900,
+      scrollThreshold: 0.1,
       filter: '',
       easing: 'swing'
   });
@@ -60,13 +59,9 @@ if($('body').hasClass('home')){
       else if ($filter.hasClass('fix') && scroll_top < splash)
       {
 
-       $filter.removeClass("fix");
-        $('.nav-home').onePageNav({
-            filter: ':not(.our-work)'
-        });
-
+        $filter.removeClass("fix");
         $(".logo-small").removeClass("fix-logo");
-        $(".our-work").removeClass("current-menu-item");
+  
       }
     });
   }

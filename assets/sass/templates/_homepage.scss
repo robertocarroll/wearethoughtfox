@@ -1,7 +1,7 @@
 
 
 #work, #about, #blog {
-	@extend .double-padding-above; 
+	padding-top: 4*$base-spacing-unit;
 	@extend .double-padding-below;
 }
 
@@ -9,9 +9,6 @@
 	@extend .line; 
 }
 
-#blog {
-	@extend .double-margin-above; 
-}
 
 .featured-work-image {
 	@include gs-span(wd, 1, 9);
