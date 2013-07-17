@@ -29,7 +29,7 @@
 
 }
 
-.menu-main-navigation-container {
+.menu-main-navigation-container, .menu-main-navigation-home-container {
 	@include gs-span(wd, 3, 10);
 	clear: both;
 	float: none;

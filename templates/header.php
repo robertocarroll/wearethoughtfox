@@ -2,7 +2,7 @@
 
 <?php if ( is_front_page() ) {?>
 
- <div class="splash">
+ <div class="splash" id="top">
     <div class="splash-inner"> 
         <img alt="logo" class="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo-with-person.png">
         <?php 

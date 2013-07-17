@@ -1,9 +1,9 @@
 /* 
  * For the smooth scroll http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
- 
+*/ 
 
 $(document).ready(function(){
-  $('a[href^="#"]').on('click',function (e) {
+  $('a[href^="#top"]').on('click',function (e) {
       e.preventDefault();
 
       var target = this.hash,
@@ -14,10 +14,11 @@ $(document).ready(function(){
       }, 900, 'swing', function () {
           window.location.hash = target;
       });
+
   });
 });
 
-*/
+
 
 /* 
  * For the highlighting the nav http://trevordavis.net/blog/jquery-one-page-navigation-plugin
@@ -27,8 +28,7 @@ $(document).ready(function(){
       currentClass: 'current-menu-item',
       changeHash: true,
       scrollSpeed: 900,
-      scrollThreshold: 0.1,
-      filter: '',
+      scrollThreshold: 0.5,
       easing: 'swing'
   });
 
