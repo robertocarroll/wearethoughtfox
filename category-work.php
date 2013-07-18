@@ -3,6 +3,16 @@
 <div class="wrapper">
   <div class="work-page">
 
+   <?php  if ( is_tax() ) { ?>
+
+      <?php $term = get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
+    
+    <h1><?php echo $term->name;?></h1>
+
+    <?php }
+
+    else { ?>
+
     <h1>Work</h1>
 
     <div class="entry-meta">
@@ -18,6 +28,8 @@
       <?php endforeach; ?>
       </ul>
      </div> 
+
+     <?php } ?>
 
 <?php
       $watf_style_classes = array('first-work-post','second-work-post','third-work-post','fourth-work-post');
