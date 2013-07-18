@@ -38,7 +38,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'blog-thumb', 600, 600 ); // 
 	add_image_size( 'featured-work', 1000, 1000 ); // 
-	add_image_size( 'thumb-work', 400, 400 ); //
+	add_image_size( 'thumb-work', 400, 400, true ); //
 
 }
 

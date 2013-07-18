@@ -20,54 +20,40 @@
      </div> 
 
 <?php
-$args=array(
-    'orderby' => 'date',
-    'order' => 'ASC',
-    'posts_per_page' => 1,
-    'caller_get_posts'=>1
-);
-$oldestpost =  get_posts($args);
+      $watf_style_classes = array('first-work-post','second-work-post','third-work-post','fourth-work-post');
+      $watf_styles_count = count($watf_style_classes);
+      $watf_style_index = 0;
+  ?>  
 
-$args=array(
-    'orderby' => 'date',
-    'order' => 'DESC',
-    'posts_per_page' => 1,
-    'caller_get_posts'=>1
-);
-$newestpost =  get_posts($args);
+    </div><!-- /.work-page -->                
 
-if ( !empty($oldestpost) && !empty($newestpost) ) {
-  $oldest = mysql2date("Y", $oldestpost[0]->post_date);
-  $newest = mysql2date("Y", $newestpost[0]->post_date);
 
-  for ( $counter = intval($newest); $counter >= intval($oldest); $counter = $counter - 1) {
-
-    $args=array(
-      'year'     => $counter,
-      'posts_per_page' => -1,
-      'orderby' => 'title',
-      'order' => 'ASC',
-      'caller_get_posts'=>1,
-      'category_name' => 'work'
-    );
-
-    $my_query = new WP_Query($args);
-
-    if( $my_query->have_posts() ) {
-
-      echo '<header class="work-title"><h2>' . $counter . '</h2></header>';
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       
-      while ($my_query->have_posts()) : $my_query->the_post(); ?>
-      <div class="work-list"> 
-        <h3 class="gamma least-margin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <?php the_excerpt(); ?>
-      </div>
+      <div class="<?php echo $watf_style_classes[$watf_style_index++ % $watf_styles_count]; ?>"> 
+
+            <?php
+                if ( has_post_thumbnail() ){ ?>
+
+                <div class="work-thumb">
+
+                    <?php $thumbID = get_post_thumbnail_id($post->ID); ?>
+                    <?php the_post_thumbnail('thumb-work'); ?>
+
+                </div>    
+            
+            <?php } ?>
+
+      <h3 class="work-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+          <div class="work-summary"><?php the_excerpt(); ?></div> 
+
+    </div><!-- /.article -->
       
-       <?php endwhile;
-    } //if ($my_query)
-  wp_reset_query();  // Restore global post data stomped by the_post().
-  }
-}
-?>
-  </div><!-- /.work-page -->
+       <?php endwhile; ?>
+
+      <?php else : ?>
+
+<!-- posts not found info -->
+<?php endif; ?>
+  
 </div><!-- /.wrapper -->

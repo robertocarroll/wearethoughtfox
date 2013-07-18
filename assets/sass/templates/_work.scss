@@ -2,6 +2,17 @@
 .work-page {
 	@include gs-span(wd, 4, 9);
 	clear:both;
+	text-align: center;
+	margin-top: 2*$base-spacing-unit;
+	margin-bottom: 2*$base-spacing-unit;
 }
 
+.work-title {
+	text-align: center;
+	clear:both;
+}
 
+.first-work-post {
+
+	clear:both;
+}
