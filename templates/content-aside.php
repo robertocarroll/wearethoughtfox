@@ -25,9 +25,13 @@
 
 				<?php echo '</div>' ?>
 
-				<?php } ?>
+				<?php } ?>	
 
-		<div class="gamma"><?php the_excerpt(); ?></div>
+		</header><!-- .entry-header -->	
+
+		<div class="article-text">	
+
+		<div class="gamma narrow"><?php the_excerpt(); ?></div>
 
 		<div class="entry-meta">
 			<time class="updated" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('Y'); ?></time>
@@ -44,13 +48,10 @@
 			?>
 
 		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
-
+	
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
-
-
 
 	<footer>	
 
@@ -72,13 +73,13 @@
 				
 				<?php if( $work_query->have_posts() ) : ?>
 				
-				<h2 class="gamma">Blog posts about <span class="blue"><?php the_title(); ?></span></h2> 
+				<h2 class="delta">Blog posts about <span class="blue"><?php the_title(); ?></span></h2> 
 				
 				<?php while ( $work_query->have_posts() ) : $work_query->the_post(); ?>
 		
 					 <div class="blog-post margin-below">
 
-            		<h3 class="delta least-margin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
+            		<h3 class="epsilon least-margin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
                     <h4 class="zeta date margin-below-half gray"><?php the_time('j F Y'); ?></h4>
 
             	</div><!-- /.blog-post -->
@@ -103,7 +104,7 @@
 
 		</nav>
 
-
+	</div><!-- .article-text -->
 
 		<?php edit_post_link( __( 'Edit', 'wearethoughtfox' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->

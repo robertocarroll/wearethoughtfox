@@ -1,7 +1,20 @@
+.entry-header {
+    margin-top: 2*$base-spacing-unit;
+}
+
+.entry-title {
+    text-align: center;
+    color: $watf-blue-grey;
+}
+
 .updated {
     float: left;
 }
 
+.article-text {
+    clear: both;
+    @include gs-span(wd, 4, 9, (1, 12));
+}
 
 .project-type:before{
             content:" • ";
