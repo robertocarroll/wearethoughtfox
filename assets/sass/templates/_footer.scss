@@ -36,6 +36,16 @@ footer[role="contentinfo"] {
 
 }
 
+.footer-facts {
+	@include gs-span(wd, 9, 11);
+	@extend .double-margin-above;
+	@extend .serif;
+	@extend .darkest-grey;
+	font-size: $h6-size;
+	text-align: center;
+
+}
+
 .footer-logo {
 	@include gs-span(wd, 6, 7);
 	@extend .margin-above;

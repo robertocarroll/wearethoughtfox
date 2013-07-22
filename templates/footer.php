@@ -16,6 +16,13 @@
 				<img alt="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo.jpg">
 			</div>
 		
+		 <?php 
+           // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer_2') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?> 	
+
 
 	<div class="copyright darkest-grey centre padding-below">		
     	We Are Thought Fox Ltd, Registered in England and Wales, no. 8051628.

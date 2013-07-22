@@ -104,5 +104,14 @@ function watf_widgets_init() {
     'after_title' => '</h2>',
   ) );
 
+     register_sidebar( array(
+    'name' => 'Footer facts',
+    'id' => 'footer_2',
+    'before_widget' => '<div class="footer-facts">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="standard">',
+    'after_title' => '</h2>',
+  ) );     
+
 }
 add_action( 'widgets_init', 'watf_widgets_init' );
