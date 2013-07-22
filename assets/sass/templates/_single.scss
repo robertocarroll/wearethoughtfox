@@ -2,3 +2,9 @@
 	@include gs-span(wd, 1, 12);
 	padding-bottom: $half-spacing-unit;
 }
+
+
+.article-blog {
+	@include gs-span(wd, 4, 9);
+	padding-bottom: $half-spacing-unit;
+}

@@ -5,7 +5,7 @@
 ?>
 <?php while (have_posts()) : the_post(); ?>
 <div class="wrapper">
-	<div class="article">
+	<div class="article-blog">
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
