@@ -61,7 +61,14 @@
          <div class="featured-work-text">   
 
 		  <h3 class="work-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <div class="work-summary"><?php the_excerpt(); ?></div>
+          <div class="work-summary">
+           <?php $featured_teaser = get_post_meta($post->ID, 'featured-teaser', true);
+                if ($featured_teaser)
+                {echo $featured_teaser;}
+
+            else { the_excerpt();}
+            
+            ?></div>
 
          </div> 
 
