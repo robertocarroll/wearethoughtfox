@@ -2,7 +2,7 @@
 
 <footer id="contact" class="content-info"  role="contentinfo">
 
-<div class="wrapper">
+<div class="wrapper footer-wrapper">
   
         <?php 
            // Custom widget Area Start

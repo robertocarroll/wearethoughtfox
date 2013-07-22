@@ -91,7 +91,7 @@
                         // Order by ID
                         'orderby' => ID, 
                         // Get only the one most recent
-                        'showposts' => 4
+                        'showposts' => 3
 
                     ) );
                     
@@ -99,6 +99,7 @@
     
         <div class="<?php echo $watf_style_classes[$watf_style_index++ % $watf_styles_count]; ?>"> 
 
+           <a href="<?php the_permalink(); ?>"> 
             <?php
                 if ( has_post_thumbnail() ){ ?>
 
@@ -111,8 +112,9 @@
             
             <?php } ?>
 
-		  <h3 class="work-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		  <h3 class="work-title"><?php the_title(); ?></h3>
           <div class="work-summary"><?php the_excerpt(); ?></div>	
+          </a>
 
 		</div><!-- /.article -->
 

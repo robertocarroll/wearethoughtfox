@@ -19,8 +19,12 @@
 footer[role="contentinfo"] {
 	background: tint( $watf-blue-grey, 90% );
 	clear:both;
+	padding-bottom: 16*$base-spacing-unit;
 }	
 
+.footer-wrapper {
+	padding-top: 4*$base-spacing-unit;
+}
 
 .footer-contact {
 	@include gs-span(wd, 2, 4);
