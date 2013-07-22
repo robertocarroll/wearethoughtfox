@@ -32,7 +32,7 @@
      <?php } ?>
 
 <?php
-      $watf_style_classes = array('first-work-post','second-work-post','third-work-post','fourth-work-post');
+      $watf_style_classes = array('first-work-post','second-work-post','third-work-post');
       $watf_styles_count = count($watf_style_classes);
       $watf_style_index = 0;
   ?>  
