@@ -10,23 +10,23 @@
 
 
 <?php
-// Get IDs of sticky posts
-$sticky = get_option('sticky_posts');
-// first loop to display  
-// MOST RECENT two sticky posts
+
+/* Get all sticky posts */
+$sticky = get_option( 'sticky_posts' );
+
+/* Sort the stickies with the newest ones at the top */
 rsort( $sticky );
 
-$sticky = array_slice( $sticky, 0, 3);
+/* Get the 5 newest stickies (change 5 for a different number) */
+$sticky = array_slice( $sticky, 0, 10 );
 
 $most_recent_sticky_post_blog = new WP_Query( array( 
     // Only sticky posts
-    'post__in' => $sticky, 
-    // Treat them as sticky posts
-    'ignore_sticky_posts' => 1, 
-    // Only from work category
-    'category_name'=> blog,
-
+    'posts_per_page' => 2,
+    'category_name' => 'blog',
+    'post__in' => $sticky    
 ) );
+
 while ( $most_recent_sticky_post_blog->have_posts() ) : $most_recent_sticky_post_blog->the_post(); ?>
     
         <div class="<?php echo $watf_style_classes[$watf_style_index++ % $watf_styles_count]; ?>"> 
