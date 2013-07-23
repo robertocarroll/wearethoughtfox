@@ -47,6 +47,12 @@
     line-height: $lowest-line-height;
 }
 
+.subtitle {
+    @extend .gamma;
+    line-height: 32px;
+}
+
+
 .next {
     	float:right;
     }

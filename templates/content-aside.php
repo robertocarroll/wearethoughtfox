@@ -31,7 +31,7 @@
 
 		<div class="article-text">	
 
-		<div class="gamma narrow"><?php the_excerpt(); ?></div>
+		<div class="subtitle"><?php the_excerpt(); ?></div>
 
 		<div class="entry-meta">
 			<time class="updated" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('Y'); ?></time>
