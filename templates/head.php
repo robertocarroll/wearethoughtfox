@@ -13,17 +13,9 @@
   <link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-  <!-- Favicons and Apple Touch icons
+  <!-- Favicons
 	================================================== -->
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" />	
-	<!-- Standard iPhone --> 
-	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/images/b-114.png" />
-	<!-- Retina iPhone --> 
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_directory'); ?>/images/b-114.png"  />
-	<!-- Standard iPad --> 
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/images/b-144.png" />
-	<!-- Retina iPad --> 
-	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/images/b-144.png"  />
+	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/images/favicon.ico" />	
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/javascripts/html5.js" type="text/javascript"></script>
