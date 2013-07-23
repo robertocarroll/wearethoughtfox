@@ -42,6 +42,10 @@
         }
     }
 
+.blog-posts-title {
+    @extend .delta;
+    line-height: $lowest-line-height;
+}
 
 .next {
     	float:right;

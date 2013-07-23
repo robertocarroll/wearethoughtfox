@@ -73,7 +73,7 @@
 				
 				<?php if( $work_query->have_posts() ) : ?>
 				
-				<h2 class="delta">Blog posts about <span class="blue"><?php the_title(); ?></span></h2> 
+				<h2 class="blog-posts-title">Blog posts about <span class="blue"><?php the_title(); ?></span></h2> 
 				
 				<?php while ( $work_query->have_posts() ) : $work_query->the_post(); ?>
 		
