@@ -34,6 +34,18 @@ footer[role="contentinfo"] {
 	font-size: $milli-size;
 	text-align: center;
 
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 2, 11);
+      clear:both;
+      padding-bottom: 2*$base-spacing-unit;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+      padding-bottom: 2*$base-spacing-unit;
+     } 
+
 }
 
 .footer-facts {
@@ -44,16 +56,41 @@ footer[role="contentinfo"] {
 	font-size: $h6-size;
 	text-align: center;
 
+	@include respond-to(tablet) { 
+	  @include gs-span(wt, 2, 11);
+      clear:both;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     } 
+
 }
 
 .footer-logo {
 	@include gs-span(wd, 6, 7);
 	@extend .margin-above;
 	@extend .margin-below;
+
+	@include respond-to(tablet) { 
+	  @include gs-span(wt, 2, 11);
+	  text-align: center;
+      clear:both;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      text-align: center;
+      clear:both;
+     } 
 }
 
 
-
 .copyright {
+	@extend .darkest-grey;
+	@extend .centre;
+	@extend .padding-below;
+	@extend .double-padding-above;
 	clear:both;
 }

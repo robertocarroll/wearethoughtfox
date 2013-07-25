@@ -7,6 +7,15 @@
 .article-blog {
 	@include gs-span(wd, 4, 9);
 	padding-bottom: $half-spacing-unit;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 2, 11);
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+     } 
+
 }
 
 .entry-title-blog  {

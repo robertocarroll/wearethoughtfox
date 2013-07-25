@@ -24,7 +24,7 @@
           ?> 	
 
 
-	<div class="copyright darkest-grey centre padding-below">		
+	<div class="copyright">		
     	We Are Thought Fox Ltd, Registered in England and Wales, no. 8051628.
 	</div>
 

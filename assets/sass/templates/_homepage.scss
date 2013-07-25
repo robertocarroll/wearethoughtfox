@@ -13,12 +13,36 @@
 .featured-work-image {
 	@include gs-span(wd, 1, 9);
 	@extend .double-padding-below;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, all);
+      clear:both;
+      padding-bottom: 0 !important;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+      padding-bottom: 0 !important;
+     } 
 }
 
 .featured-work-text {
 	@include gs-span(wd, 10, 12);
 	@include gs-pad(wd, padinfull);
 	text-align: center;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, all);
+      clear:both;
+      padding-bottom: 3*$base-spacing-unit;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+      padding-bottom: 2*$base-spacing-unit;
+     } 
 }
 
 .work-title {
@@ -46,27 +70,6 @@
 	font-weight: 300;
 }
 
-.first-work-post, .second-work-post, .third-work-post, .fourth-work-post {
-	text-align: center;
-	@extend .padding-below;
-}
-
-.first-work-post {
-	@include gs-span(wd, 1, 4);
-}
-
-.second-work-post {
-	@include gs-span(wd, 5, 8);
-}
-
-.third-work-post {
-	@include gs-span(wd, 9, 12);
-
-}
-
-.fourth-work-post {
-	@include gs-span(wd, 10, 12);
-}
 
 .work-thumb {
 	text-align: center;
@@ -87,12 +90,34 @@
 	@include gs-span(wd, 1, 5);
 	text-align: center;
 	@extend .padding-below;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 2, 11);
+      padding-bottom: 2*$base-spacing-unit;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      padding-bottom: 2*$base-spacing-unit;
+     } 
+
 }
 
 .second-blog-post {
 	@include gs-span(wd, 8, 12);
 	text-align: center;
 	@extend .padding-below;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 2, 11);
+      clear:both;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     } 
+
 }
 
 .blog-date {

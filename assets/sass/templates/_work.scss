@@ -12,7 +12,65 @@
 	clear:both;
 }
 
+.first-work-post, .second-work-post, .third-work-post, .fourth-work-post {
+	text-align: center;
+	@extend .padding-below;
+}
+
 .first-work-post {
+	@include gs-span(wd, 1, 4);
 
 	clear:both;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 1, 6);
+      clear:both;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     } 
 }
+
+.second-work-post {
+	@include gs-span(wd, 5, 8);
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 7, 12);
+     } 
+
+    @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     } 
+}
+
+.third-work-post {
+	@include gs-span(wd, 9, 12);
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 1, 6);
+      clear:both;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     }
+
+}
+
+.fourth-work-post {
+	@include gs-span(wd, 10, 12);
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 7, 12);
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     }
+
+ }  

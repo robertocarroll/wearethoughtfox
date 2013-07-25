@@ -14,6 +14,16 @@
 .article-text {
     clear: both;
     @include gs-span(wd, 4, 9, (1, 12));
+
+    @include respond-to(tablet) { 
+      @include gs-span(wt, 2, 11, (1, 12));
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+     } 
+
+    
 }
 
 .project-type:before{
