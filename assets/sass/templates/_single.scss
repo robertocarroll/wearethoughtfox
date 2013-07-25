@@ -20,8 +20,13 @@
 
 .entry-title-blog  {
     color: $watf-blue-grey;
+    font-size: $h2-size;
 }
 
 .royalSlider {
 	margin-bottom: 2*$base-spacing-unit;
+}
+
+.rsDefaultInv, .rsDefaultInv .rsOverflow, .rsDefaultInv .rsSlide, .rsDefaultInv .rsVideoFrameHolder, .rsDefaultInv .rsThumbs {
+    background: none repeat scroll 0 0 #ffffff !important;
 }

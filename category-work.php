@@ -7,13 +7,13 @@
 
       <?php $term = get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
     
-    <h1 class="darkest-grey"><?php echo $term->name;?></h1>
+    <h1 class="darkest-grey beta"><?php echo $term->name;?></h1>
 
     <?php }
 
     else { ?>
 
-    <h1 class="darkest-grey">Work</h1>
+    <h1 class="darkest-grey beta">Work</h1>
 
     <div class="entry-meta">
     <ul class="nav">

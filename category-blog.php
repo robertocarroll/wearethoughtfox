@@ -7,7 +7,7 @@
 
 				<article <?php post_class() ?>>
 
-						<h1 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+						<h1 class="beta" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 
 						<div class="entry">
 							<?php the_content(); ?>
