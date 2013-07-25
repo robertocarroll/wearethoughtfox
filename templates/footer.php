@@ -13,7 +13,7 @@
 
 		
 			 <div class="footer-logo">
-				<img alt="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo.jpg">
+				<img alt="logo" src="<?php bloginfo('template_directory'); ?>/assets/images/logo.png">
 			</div>
 		
 		 <?php 
