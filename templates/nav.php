@@ -1,8 +1,9 @@
-  <div class="nav-wrapper">
+  <div class="nav-wrapper"> 
     <nav class="nav-main wrapper" role="navigation">
+      <div class="menu-trigger"><i class="icon-list-ul icon-2x"></i></div>
       <?php
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
+          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav nav-slide'));
         endif;
       ?>
     </nav>

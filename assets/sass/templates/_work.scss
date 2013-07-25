@@ -23,7 +23,7 @@
 	clear:both;
 
 	@include respond-to(tablet) { 
-      @include gs-span(wt, 1, 6);
+      @include gs-span(wt, 2, 11);
       clear:both;
      } 
 
@@ -37,7 +37,8 @@
 	@include gs-span(wd, 5, 8);
 
 	@include respond-to(tablet) { 
-      @include gs-span(wt, 7, 12);
+      @include gs-span(wt, 2, 11);
+      clear:both;
      } 
 
     @include respond-to(mobile) { 
@@ -50,7 +51,7 @@
 	@include gs-span(wd, 9, 12);
 
 	@include respond-to(tablet) { 
-      @include gs-span(wt, 1, 6);
+      @include gs-span(wt, 2, 11);
       clear:both;
      } 
 

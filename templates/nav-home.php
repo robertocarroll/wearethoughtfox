@@ -2,9 +2,10 @@
 
   <div class="nav-wrapper">
     <nav class="nav-main wrapper" role="navigation">
+      <div class="menu-trigger"><i class="icon-list-ul icon-2x"></i></div>
       <?php
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation_home', 'menu_class' => 'nav nav-home'));
+          wp_nav_menu(array('theme_location' => 'primary_navigation_home', 'menu_class' => 'nav nav-home nav-slide'));
         endif;
       ?>
     </nav>

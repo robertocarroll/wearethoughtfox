@@ -33,8 +33,9 @@
 	@include gs-span(wd, 1, 12);
 	clear: both;
 	float: none;
-
 }
+
+
 
 .logo-small {
 	@include gs-span(wd, 6, 7);
@@ -58,7 +59,22 @@
 ul#menu-main-navigation, ul#menu-main-navigation-home {
 	margin: 0;
 	padding-left: 8%;
+	
+
+	@media screen and (max-width: 660px) {
+    	display: none;  
+	}
 }
+
+.menu-trigger, .menu-trigger-home {
+	@media screen and (min-width: 661px) {
+    	display: none;  
+	}
+
+	@media screen and (max-width: 660px) {
+    	float: left;  
+	}
+}	
 
 .content {
 	clear: both;
@@ -79,3 +95,33 @@ ul#menu-main-navigation, ul#menu-main-navigation-home {
 .who-are-we {
 	padding-right: 14% !important;
 }
+
+
+.menu-trigger, .menu-trigger-home {
+	color: white;
+	padding-top: $half-spacing-unit;
+	padding-bottom: $half-spacing-unit;
+}
+
+#jPanelMenu-menu {
+	background: darken($watf-grey, 30%);	
+
+	ul {
+		border-bottom: 1px solid lighten($watf-blue-grey,5%);
+	}
+
+	li a {
+		text-transform: uppercase;  
+    	letter-spacing: -0.0375em; 
+		@extend .sans;
+		font-size: $milli-size;
+		display: block;
+		padding: $base-spacing-unit;
+		text-decoration: none;
+		color: white;
+
+	}
+}
+
+
+
