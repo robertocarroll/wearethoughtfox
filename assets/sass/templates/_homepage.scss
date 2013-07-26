@@ -120,6 +120,24 @@
 
 }
 
+.blog-middle {
+	@include gs-span(wd, 6, 7);
+	text-align: center;
+	@extend .padding-below;
+
+	@include respond-to(tablet) { 
+      @include gs-span(wt, 3, 10);
+      clear:both;
+     } 
+
+     @include respond-to(mobile) { 
+      @include gs-span(wm, all);
+      clear:both;
+     } 
+
+}
+
+
 .blog-date {
 	font-style: italic;
 	font-size: $milli-size;

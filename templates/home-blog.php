@@ -49,6 +49,13 @@ while ( $most_recent_sticky_post_blog->have_posts() ) : $most_recent_sticky_post
 
         <?php 
            // Custom widget Area Start
+           if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blog-middle') ) : ?>
+          <?php endif;
+          // Custom widget Area End
+          ?> 
+
+        <?php 
+           // Custom widget Area Start
            if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blog-button') ) : ?>
           <?php endif;
           // Custom widget Area End
