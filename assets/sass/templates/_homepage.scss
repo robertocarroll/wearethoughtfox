@@ -28,6 +28,9 @@
 }
 
 .featured-work-text {
+
+	padding-top: $base-spacing-unit;
+
 	@include gs-span(wd, 10, 12);
 	@include gs-pad(wd, padinfull);
 	text-align: center;

@@ -5,7 +5,8 @@
 .entry-title {
     text-align: center;
     color: $watf-blue-grey;
-    font-size: $h2-size;
+    font-size: $h4-size;
+    line-height: 1.3em;
 }
 
 .updated {
@@ -59,7 +60,7 @@
 }
 
 .subtitle {
-    @extend .gamma;
+    @extend .epsilon;
     line-height: 32px;
 }
 

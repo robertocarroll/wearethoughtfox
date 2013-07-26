@@ -49,7 +49,7 @@ footer[role="contentinfo"] {
 }
 
 .footer-facts {
-	@include gs-span(wd, 9, 11);
+	@include gs-span(wd, 9, 12);
 	@extend .double-margin-above;
 	@extend .serif;
 	@extend .darkest-grey;
@@ -67,6 +67,20 @@ footer[role="contentinfo"] {
      } 
 
 }
+
+.fun-facts-text {
+	float: left;
+	width: 70%;
+}
+
+
+.fun-facts-image {
+	float: right;
+	width: 30%;
+	 margin-top: -60px;
+}
+
+
 
 .footer-logo {
 	@include gs-span(wd, 6, 7);
@@ -92,5 +106,6 @@ footer[role="contentinfo"] {
 	@extend .centre;
 	@extend .padding-below;
 	@extend .double-padding-above;
+	font-size: $milli-size;
 	clear:both;
 }
