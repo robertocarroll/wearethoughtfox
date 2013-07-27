@@ -96,7 +96,7 @@
                         // Only from work category
                         'category_name'=> work,
                         // Order by ID
-                        'orderby' => ID, 
+                        'orderby' => date, 
                         // Get only the one most recent
                         'showposts' => 3
 
