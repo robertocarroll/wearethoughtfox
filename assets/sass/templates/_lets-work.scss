@@ -2,22 +2,26 @@
 .about-us {
 	@extend .delta;
     @extend .double-margin-below;
-    @extend .margin-above-half;
     line-height:  $lowest-line-height;
 	@include gs-span(wd, 4, 9);
 	@include gs-pad(wd, padfull);
     text-align: center;
     color: $watf-blue-grey;
     font-weight: 300;
+    border-right: 1px solid $watf-grey;
+  border-left: 1px solid $watf-grey;
+
 
     @include respond-to(tablet) { 
       @include gs-span(wt, 1, 12);
       clear:both;
+      border: none;
      } 
 
      @include respond-to(mobile) { 
       @include gs-span(wm, all);
       clear:both;
+      border: none;
      } 
 
 }
