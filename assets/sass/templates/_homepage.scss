@@ -127,8 +127,7 @@
 	@include gs-span(wd, 6, 7);
 	text-align: center;
 	@extend .padding-below;
-	border-right: 1px solid $watf-grey;
-	border-left: 1px solid $watf-grey;
+
 
 	@include respond-to(tablet) { 
       @include gs-span(wt, 3, 10);
