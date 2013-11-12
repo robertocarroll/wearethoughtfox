@@ -25,6 +25,12 @@
     text-align: center;
 }
 
+.entry-content h2  {
+    color: $watf-blue-grey;
+    font-size: $h5-size;
+    line-height: 1.3em;
+}
+
 .royalSlider {
 	margin-bottom: 2*$base-spacing-unit;
 }
