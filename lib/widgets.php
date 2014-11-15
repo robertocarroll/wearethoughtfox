@@ -7,8 +7,8 @@ function watf_widgets_init() {
   register_sidebar( array(
     'name' => 'Home top',
     'id' => 'home_top_1',
-    'before_widget' => '<h1 class="beta serif-light nocase narrow darkest-grey">',
-    'after_widget' => '</h1>',
+    'before_widget' => '<div class="beta serif-light nocase narrow darkest-grey">',
+    'after_widget' => '</div>',
     'before_title' => '',
     'after_title' => '',
   ) );
