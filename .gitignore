@@ -10,5 +10,5 @@ lib-cov
 pids
 logs
 results
-
+assets/.sass-cache
 npm-debug.log
