@@ -4,10 +4,10 @@
 
 	
 	/*  Normal link */
-	a {color: $watf-blue-grey; text-decoration: none; @include transition(color, 0.5s, ease-out);}
+	a, .nav li a {color: $watf-blue-grey; text-decoration: none; @include transition(color, 0.5s, ease-out); border-bottom: none;}
 	
 	/*  Hover over */	
-	a:hover, a:focus {color: $watf-red; text-decoration: none;} 
+	a:hover, a:focus, .nav li a:hover, .nav li a:focus {color: $watf-red; text-decoration: none; border-bottom: none;} 
 	
 	/*  Link that's been clicked on */
 	a:visited {}
@@ -15,12 +15,15 @@
 	/*  When the link is being clicked	 */
 	a:active { color: $watf-red;}
 	
-	p a { 
-		color: $watf-red; text-decoration: none; @include transition(color, 0.5s, ease-out); 
-	    border-bottom: 1px solid $watf-red;
+	p a, ul a, ol a { 
+		color: $watf-red; 
+		text-decoration: none; 
+		@include transition(color, 0.5s, ease-out); 
+		@include transition(border, 0.5s, ease-out); 
+	  border-bottom: 1px solid lighten( $watf-red, 20% );
 	}
 
-	p a:hover, p a:focus {color: darken( $watf-red, 20% ); text-decoration: none;} 
+	p a:hover, p a:focus, ul a:hover, ol a:hover, ul a:focus, ol a:focus {color: darken( $watf-red, 10% ); text-decoration: none; border-bottom: 1px solid darken( $watf-red, 20% );} 
 	
 	/*	 
 	   No text-shadow: twitter.com/miketaylr/status/12228805301 
@@ -39,9 +42,9 @@
 
 	.nav-main li.current-menu-item a, .nav-main li.current-page-ancestor a, .nav-main li.current-post-ancestor a {color: $watf-red;}
 
-	.nav-main li a, #jPanelMenu-menu li a {color: white; text-decoration: none; @include transition(color, 0.5s, ease-out);}
+	.nav-main li a, #jPanelMenu-menu li a {color: white; text-decoration: none; @include transition(color, 0.5s, ease-out); border-bottom: none;}
 
-	.nav-main li a:hover, .nav-main li a:focus, #jPanelMenu-menu li a:hover, #jPanelMenu-menu li a:focus {color: $watf-red; text-decoration: none;} 
+	.nav-main li a:hover, .nav-main li a:focus, #jPanelMenu-menu li a:hover, #jPanelMenu-menu li a:focus {color: $watf-red; text-decoration: none; border-bottom: none;} 
 
 
 

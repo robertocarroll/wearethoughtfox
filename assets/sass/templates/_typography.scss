@@ -140,6 +140,22 @@
 	/*  Class for muted text */
 	.muted {color: #999999;}
 	
+
+	/**
+ * lists
+ */
+
+.entry > ol, .entry-content ol {
+	list-style: outside none decimal;
+  margin: $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit;
+  padding: 0;
+}
+
+.entry > ul, , .entry-content ul {
+	list-style: outside none disc;
+  margin: $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit;
+  padding: 0;
+}	
 	
 	/*  Defines a thematic change in the content */
 	hr {
@@ -174,9 +190,9 @@
 
 	blockquote p {
 	  margin-bottom: 0;
-	  font-size: 16px;
+	  font-size: $base-font-size;
 	  font-weight: 300;
-	  line-height: 25px;
+	  line-height: $base-line-height;
 	}
 
 	blockquote small {
@@ -251,8 +267,6 @@
 	code {
 	  padding: 2px 4px;
 	  color: #d14;
-	  background-color: #f7f7f9;
-	  border: 1px solid #e1e1e8;
 	}
 	pre {
 	  display: block;

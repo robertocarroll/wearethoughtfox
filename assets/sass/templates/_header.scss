@@ -38,12 +38,16 @@
 
 
 .logo-small {
-	@include gs-span(wd, 6, 7);
-	height: 58px;
+	@include gs-span(wd, 6, 7);	
 	margin-top: -40px;
 	text-align: center;	
 	z-index: 102;
 }
+
+.logo-small a img {
+	height: 58px;
+}
+
 
 .nav-main li {
 	padding-bottom: $half-spacing-unit;
@@ -54,8 +58,12 @@
 .nav-main li a {
     text-transform: uppercase;  
     letter-spacing: -0.0375em;  
+    border-bottom: none;
 }
 
+.nav-main li a:hover {
+	border-bottom: none;
+}
 
 ul#menu-main-navigation, ul#menu-main-navigation-home {
 	margin: 0;
