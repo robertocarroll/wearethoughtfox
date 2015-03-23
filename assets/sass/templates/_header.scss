@@ -46,6 +46,13 @@
 
 .logo-small a img {
 	height: 58px;
+	padding-top: 0;
+
+	@media screen and (max-width: 660px) {
+    height: 100%;
+    width: 100%;
+    padding-top: 12px; 
+	}
 }
 
 
