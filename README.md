@@ -28,3 +28,6 @@ WordPress templates use a wrapper as in Roots and Scribu http://scribu.net/wordp
 1. Blog post - 600 x 407
 2. Teaser image - 400 x 315 
 
+
+## Tags
+To make a blog post show up on a work post, give it a tag with the same name as the slug, e.g. for 'work/icc-alpha' the tag will be 'icc-alpha'

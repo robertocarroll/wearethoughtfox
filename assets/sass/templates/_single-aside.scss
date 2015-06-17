@@ -61,7 +61,7 @@
 
 .subtitle {
     @extend .epsilon;
-    line-height: 32px;
+    line-height: $lowest-line-height;
 }
 
 
