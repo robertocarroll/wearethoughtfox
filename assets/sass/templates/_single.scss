@@ -8,13 +8,13 @@
 	@include gs-span(wd, 4, 9);
 	padding-bottom: $half-spacing-unit;
 
-	@include respond-to(tablet) { 
+	@include respond-to(tablet) {
       @include gs-span(wt, 2, 11);
-     } 
+     }
 
-     @include respond-to(mobile) { 
+     @include respond-to(mobile) {
       @include gs-span(wm, all);
-     } 
+     }
 
 }
 
@@ -31,6 +31,15 @@
     line-height: 1.3em;
     padding-top: $base-spacing-unit;
 		margin-bottom: $quarter-spacing-unit;
+}
+
+.entry h3, .entry-content h3  {
+    color: $watf-blue-grey;
+    font-size: $h6-size;
+    line-height: 1.3em;
+    padding-top: $base-spacing-unit;
+    margin-bottom: $quarter-spacing-unit;
+    text-transform: uppercase;
 }
 
 .royalSlider {
