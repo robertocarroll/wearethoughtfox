@@ -5,9 +5,9 @@
  */
 
 function watf_css_loader() {
-  
+
     wp_enqueue_style('watf', get_template_directory_uri().'/assets/build/watf.css', false ,'0.90', 'all' );
-    
+
   if (ICL_LANGUAGE_CODE == "ar") {
    wp_enqueue_style('watf-ar', get_template_directory_uri().'/assets/build/watf-rtl.css', false ,'0.90', 'all' );
   }
@@ -25,11 +25,11 @@ add_action( 'wp_enqueue_scripts', 'child_add_ie8_style_sheet', 200 );
  * @link   http://code.garyjones.co.uk/enqueued-style-sheet-extras/
  */
 function child_add_ie8_style_sheet() {
-  global $wp_styles;  
+  global $wp_styles;
   wp_enqueue_style( 'child-ie8', get_stylesheet_directory_uri() . '/watf-old-ie.css', array(), '1.0' );
   $wp_styles->add_data( 'child-ie8', 'conditional', 'lte IE 8' );
 }
- 
+
 
 function watf_scripts() {
 
@@ -66,16 +66,4 @@ function watf_jquery_local_fallback($src, $handle) {
   }
 
   return $src;
-}
-
-function watf_google_analytics() { ?>
-<script>
-  var _gaq=[['_setAccount','<?php echo GOOGLE_ANALYTICS_ID; ?>'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-<?php }
-if (GOOGLE_ANALYTICS_ID) {
-  add_action('wp_footer', 'watf_google_analytics', 20);
 }
